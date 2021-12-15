@@ -14,6 +14,6 @@ public class ATV4EJP
         System.out.println("Digite o valor da quantia recebida:");
         float quantia_recebida = scan.nextFloat();
         System.out.println("O troco é de: R$" +(quantia_recebida-valor_produto));
-     
+        scan.close();
     }    
 }

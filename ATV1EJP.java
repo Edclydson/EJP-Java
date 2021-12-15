@@ -13,6 +13,6 @@ public class ATV1EJP
 	    System.out.println("Digite o segundo numero: ");
 		int b = scan.nextInt();
 		System.out.println("O produto da soma é: "+(a+b));
-	 
+        scan.close();
 	}    
 }

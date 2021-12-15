@@ -12,6 +12,7 @@ public class ATV2EJP
         int altura = scan.nextInt();
         System.out.println("Digite a base do retangulo:");
         int base = scan.nextInt();
-        System.out.println("A área do retangulo é: "+base * altura);   
+        System.out.println("A área do retangulo é: "+base * altura); 
+        scan.close();  
     }    
 }

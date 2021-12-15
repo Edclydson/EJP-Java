@@ -13,5 +13,6 @@ public class ATV3EJP
         System.out.println("Digite o ano de nascimento:");
         int ano_nascimento = scan.nextInt();
         System.out.println("A sua idade é: "+ (ano_atual-ano_nascimento) +" anos");
+        scan.close();
     }    
 }
