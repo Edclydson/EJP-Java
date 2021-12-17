@@ -1,38 +1,70 @@
 import java.util.Random;
-import java.util.Scanner;
-public class DESAFIO1EJP_POKEMON 
-{
-        // DECLARANDO AS VARIAVEIS
-    public static String pokemonEscolhido;
+import javax.swing.JOptionPane;
+
+public class DESAFIO1EJP_POKEMON
+{ 
+    Random rand = new Random();
+    public String desafiante;
+    public int lvl;
     public static String[] lista_pokemons = {"Caterpie", "Weedle","Pidgey", "Rattata", "Ekans", "Sandshrew"," Nidoran","Bulbasaur" ,"Charmander", "Squirtle", "Metapod"," Kakuna", "Pidgeotto", "Raticate"};
-    public static int lvldesafiante;
-    public static int lvlescolhido;
-    public static String pokemonDesafiante;
-    public static void main(String[] args) 
+   
+    public int lvlPokemon()
     {
-         // CRIANDO OBJETOS SCANNER E RANDOM
-        Scanner scan = new Scanner(System.in);
-        Random rand = new Random();
-         // GERANDO UM NUM ALEATORIO PARA PEGAR UMA POSIÇAO DO ARRAY
-        int pos = rand.nextInt(lista_pokemons.length);
-         // DEFININDO O POKEMON DESAFIANTE
-        pokemonDesafiante = lista_pokemons[pos];
-         // GERANDO LVL ALEATORIOS
-        lvldesafiante = rand.nextInt(100);
-        lvlescolhido = rand.nextInt(100);
-        System.out.println(pokemonDesafiante+" (Level "+lvldesafiante+ ") desafiou você!");
-         // PERGUNTANDO O POKEMON ESCOLHIDO
-        pokemonEscolhido = scan.nextLine();
-        System.out.println(pokemonEscolhido+" (Level "+lvlescolhido+"), eu escolho você!");
-         // CHECANDO QUEM TEM O MAIOR LVL
-        if(lvldesafiante > lvlescolhido)
+        lvl = rand.nextInt(100);
+        return lvl;
+    }
+    
+    public String pokemonDesafiante()
+    {
+        desafiante =lista_pokemons[rand.nextInt(lista_pokemons.length)];  // DEFININDO O POKEMON DESAFIANTE
+        return desafiante;
+    }
+
+    public String batalhaPokemon(String desafiante,int nvldesafiante,String escolhido,int nvlescolhido)
+    {
+        String vencedor = "";
+        if(nvldesafiante>nvlescolhido)
         {
-            System.out.println("O "+pokemonDesafiante+" ganhou a batalha!");
+            vencedor  = "O "+desafiante+" venceu a batalha";
+        }
+        else if(nvldesafiante<nvlescolhido)
+        {
+            vencedor = "O "+escolhido+" venceu a batalha";
         }
         else
         {
-            System.out.println("O seu "+pokemonEscolhido+" venceu a batalha!");
+            JOptionPane.showMessageDialog(null,"O "+desafiante+" e o "+escolhido+" possuem o mesmo nivel, essa batalha vai ser muito dificil!");
+            int decisao = rand.nextInt(2);
+            if(decisao==1)
+            {
+                vencedor = "O "+desafiante+" venceu a batalha";
+            }
+            else if(decisao == 2)
+            {
+                vencedor = "O "+escolhido+" venceu a batalha";
+            }
+            else
+            {
+                vencedor = "Não houve um vencedor dessa batalha! Ambos pokemóns estão exaustos!";
+            }
         }
-        scan.close();
+        return vencedor;
+    }
+    
+    
+    
+    public static void main(String[] args) 
+    {
+        DESAFIO1EJP_POKEMON a = new DESAFIO1EJP_POKEMON();
+        String pokemonDesafiante = a.pokemonDesafiante();
+        int nivelDesafiante = a.lvlPokemon();
+        String pokemonEscolhido;
+        int nivelPokemonEscolhido = a.lvlPokemon();
+
+        JOptionPane.showMessageDialog(null,pokemonDesafiante+"(Nível "+nivelDesafiante+") desafiou você! \n Escolha um Pokemón para batalhar!");
+        pokemonEscolhido = JOptionPane.showInputDialog(lista_pokemons,"Digite o nome de um Pokemón:");
+        JOptionPane.showMessageDialog(null,pokemonEscolhido+"(Nível "+nivelPokemonEscolhido+") eu escolho você!");
+        JOptionPane.showMessageDialog(null,"É hora da batalha!");
+        JOptionPane.showMessageDialog(null,a.batalhaPokemon(pokemonDesafiante, nivelDesafiante, pokemonEscolhido, nivelPokemonEscolhido));
     }
 }
