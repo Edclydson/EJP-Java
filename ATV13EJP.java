@@ -6,14 +6,12 @@ public class ATV13EJP
     {
         String msg;
         float mediafinal = (n1+n2+n3+n4)/4;
-        if (mediafinal>=7.0)
-        {
-            msg = "Aluno Aprovado!";
-        }
-        else
-        {
-            msg = "Aluno Reprovado!";
-        }
+        System.out.println("----------BOLETIM ESCOLAR----------");
+        System.out.println("Nota 1:" +n1+"\nNota 2:" +n2+"\nNota 3:"+n3+"\nNota 4:" +n4);
+        System.out.println("-----------------------------------");
+        System.out.println("Media Final:" +mediafinal);
+        if (mediafinal>=7.0){msg = "Aluno Aprovado!";}
+        else{msg = "Aluno Reprovado!";}
         return msg;
     }
     private static void consulta(ATV13EJP calc_med, String nomealuno) //FUNÇÃO PARA CHAMAR METODO
