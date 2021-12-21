@@ -1,3 +1,4 @@
+package DESAFIO_1_EJP_POKEMON;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
