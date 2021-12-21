@@ -56,7 +56,7 @@ public class Main
     
     public static void main(String[] args) 
     {
-        DESAFIO1EJP_POKEMON a = new DESAFIO1EJP_POKEMON();
+        Main a = new Main();
         String pokemonDesafiante = a.pokemonDesafiante();
         int nivelDesafiante = a.lvlPokemon();
         String pokemonEscolhido;
