@@ -2,7 +2,7 @@ package DESAFIO_1_EJP_POKEMON;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
-public class DESAFIO1EJP_POKEMON
+public class Main
 { 
     Random rand = new Random();
     public String desafiante;
