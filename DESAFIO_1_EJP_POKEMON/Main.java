@@ -2,27 +2,15 @@ package DESAFIO_1_EJP_POKEMON;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
-public class Main
-{ 
-    Random rand = new Random();
-    public String desafiante;
-    public int lvl;
-    public static String[] lista_pokemons = {"Caterpie", "Weedle","Pidgey", "Rattata", "Ekans", "Sandshrew"," Nidoran","Bulbasaur" ,"Charmander", "Squirtle", "Metapod"," Kakuna", "Pidgeotto", "Raticate"};
-   
-    public int lvlPokemon()
-    {
-        lvl = rand.nextInt(100);
-        return lvl;
-    }
-    
-    public String pokemonDesafiante()
-    {
-        desafiante =lista_pokemons[rand.nextInt(lista_pokemons.length)];  // DEFININDO O POKEMON DESAFIANTE
-        return desafiante;
-    }
+import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.GeraPokemon;
+import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.MeusPokemons;
 
+public class Main extends MeusPokemons
+{
+    
     public String batalhaPokemon(String desafiante,int nvldesafiante,String escolhido,int nvlescolhido)
     {
+        Random rand =new Random();
         String vencedor = "";
         if(nvldesafiante>nvlescolhido)
         {
@@ -51,21 +39,43 @@ public class Main
         }
         return vencedor;
     }
-    
-    
-    
-    public static void main(String[] args) 
+        
+    public static void main(String[] args)
     {
-        Main a = new Main();
-        String pokemonDesafiante = a.pokemonDesafiante();
-        int nivelDesafiante = a.lvlPokemon();
-        String pokemonEscolhido;
-        int nivelPokemonEscolhido = a.lvlPokemon();
-
-        JOptionPane.showMessageDialog(null,pokemonDesafiante+"(Nível "+nivelDesafiante+") desafiou você! \n Escolha um Pokemón para batalhar!");
-        pokemonEscolhido = JOptionPane.showInputDialog(lista_pokemons,"Digite o nome de um Pokemón:");
-        JOptionPane.showMessageDialog(null,pokemonEscolhido+"(Nível "+nivelPokemonEscolhido+") eu escolho você!");
-        JOptionPane.showMessageDialog(null,"É hora da batalha!");
-        JOptionPane.showMessageDialog(null,a.batalhaPokemon(pokemonDesafiante, nivelDesafiante, pokemonEscolhido, nivelPokemonEscolhido));
+        GeraPokemon gr = new GeraPokemon();
+        while(true)
+        {
+            String op = JOptionPane.showInputDialog(null, "Selecione uma opção:\n1-Criar Pokemon\n2-Listar Meus Pokemons\n3-Apagar Pokemons\n4-Arena\n5-Sair");
+            switch(op)
+            {
+                case "1":
+                {
+                    GeraPokemon.tipo_pokemon();
+                    GeraPokemon.lvlPokemon();
+                    GeraPokemon.vida_pokemon();
+                    MeusPokemons.newpokemon(GeraPokemon.tip_pokemon, GeraPokemon.pokemon,String.valueOf(gr.level_pokemon),String.valueOf(GeraPokemon.vida));
+                    continue;
+                }
+                case "2":
+                {
+                    gr.mostrapokemons();
+                    continue;
+                }
+                case "3":
+                {
+                   GeraPokemon.apagapokemon();
+                   continue;
+                }
+                case "4":
+                {
+                    continue;
+                }
+                case "5":
+                {
+                    System.exit(0);
+                }
+            }
+        }
     }
+
 }
