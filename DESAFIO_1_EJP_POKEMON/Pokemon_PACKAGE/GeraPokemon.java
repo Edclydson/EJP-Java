@@ -1,5 +1,12 @@
 package DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.MeusPokemons;
@@ -7,10 +14,10 @@ import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.MeusPokemons;
 public class GeraPokemon extends MeusPokemons//POKEMON >>> NOME,LVL,VIDA,TIPO,VALOR_ATAQUE,VALOR_DEFESA
 {
     
-    public static String[] pokemon_t_fogo = {"Charmander","Charmeleon","Charizard","Vulpix","Ninetales","Growlithe","Arcanine","Ponyta","Rapidash","Magmar","Flareon","Moltres","Cyndaquil","Quilava","Typhlosion","Slugma","Magcargo","Houndour","Houndoom","Magby","Entei","Ho-Oh","Torchic","Combusken","Blaziken","Numel","Camerut","Torkoal"};
-    public static String[] pokemon_t_agua = {"Wartortle","Vaporeon","Tentacruel","Tentacool","Staryu","Starmie","Squirtle","Slowpoke","Slowbro","Shellder","Seel","Seaking","Seadra","Psyduck","Poliwrath","Poliwhirl","Poliwag","Omastar","Omanyte","Magikarp","Lapras","Krabby","Kingler","Kabutops","Kabuto","Horsea","Gyarados","Golduck","Goldeen","Dewgong","Cloyster"," Blastoise"};
-    //private static String[] pokemon_t_normal = {""};,
-    //private static String[] pokemon_t_Planta = {""};
+    public static List<String> pokemon_t_fogo = new ArrayList<>();
+    public static List<String> pokemon_t_agua = new ArrayList<>();
+    public static List<String> pokemon_t_normal = new ArrayList<>();
+    public static List<String> pokemon_t_planta = new ArrayList<>();
     
     public static String pokemon;
     public static int level_pokemon;
@@ -21,25 +28,53 @@ public class GeraPokemon extends MeusPokemons//POKEMON >>> NOME,LVL,VIDA,TIPO,VA
     //GERANDO
     public static void tipo_pokemon()
     {
-        while(true)
+        try 
         {
-           int t_pokemon = rand.nextInt(2);
-            if(t_pokemon == 1)
-            {
-                int i = rand.nextInt(pokemon_t_fogo.length);
-                pokemon = pokemon_t_fogo[i];  // DEFININDO O POKEMON
-                tip_pokemon = "Fogo";
-                break;
-            }
-            if (t_pokemon == 2) 
-            {
-                int i = rand.nextInt(pokemon_t_agua.length);
-                pokemon = pokemon_t_agua[i];  // DEFININDO O POKEMON
-                tip_pokemon = "Agua";
-                break;
-            }
-            else {continue;}
-        }   
+            pokemon_t_normal = Files.readAllLines(Paths_Arquivos.path0);
+            pokemon_t_fogo = Files.readAllLines(Paths_Arquivos.path1);
+            pokemon_t_agua = Files.readAllLines(Paths_Arquivos.path2);
+            pokemon_t_planta = Files.readAllLines(Paths_Arquivos.path3);
+       
+            
+                int t_pokemon = rand.nextInt(4);
+                switch(t_pokemon)
+                {
+                    case 1:
+                    {
+                        int i = rand.nextInt(pokemon_t_fogo.size());
+                        pokemon = pokemon_t_fogo.get(i);  // DEFININDO O POKEMON
+                        tip_pokemon = "Fogo";
+                        break;
+                    }
+                    case 2:
+                    {
+                        int i = rand.nextInt(pokemon_t_agua.size());
+                        pokemon = pokemon_t_agua.get(i);  
+                        tip_pokemon = "Agua";
+                        break;
+                    }
+                    case 3:
+                    {
+                        int i = rand.nextInt(pokemon_t_normal.size());
+                        pokemon = pokemon_t_normal.get(i); 
+                        tip_pokemon = "Normal";
+                        break;
+                    }
+                    case 4:
+                    {
+                        int i = rand.nextInt(pokemon_t_planta.size());
+                        pokemon = pokemon_t_planta.get(i); 
+                        tip_pokemon = "Planta";
+                        break;
+                    }
+                    default:{}
+                }
+              
+        }
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        }
     }
     public static void lvlPokemon()
     {

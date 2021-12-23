@@ -9,26 +9,15 @@ public class AdversariosPokemons extends GeraPokemon
 {
     GeraPokemon ger = new GeraPokemon();
     //static Map<String,ArrayList> pokemons_adversarios = new HashMap<>();
-    static ArrayList<String> pokemons_adversario_stats = new ArrayList<String>();
+    public static ArrayList<String> pokemons_adversario_stats = new ArrayList<String>();
    // static ArrayList<String> pokemon2_stats = new ArrayList<String>();
    // static ArrayList<String> pokemon3_stats = new ArrayList<String>();
-    static String nome_pok_adversario;
-    static String tipo_poK_adversario;
-    static String level_pok_adversario;
-    static String vida_pok_adversario;
+    public static String nome_pok_adversario;
+    public static String tipo_poK_adversario;
+    public static String level_pok_adversario;
+    public static String vida_pok_adversario;
 
-            public static void main(String[] args) 
-            {
-                GeraPokemon.tipo_pokemon();
-                tipo_poK_adversario = GeraPokemon.tip_pokemon;
-                nome_pok_adversario = GeraPokemon.pokemon;
-                GeraPokemon.lvlPokemon();
-                level_pok_adversario = String.valueOf(GeraPokemon.level_pokemon);
-                GeraPokemon.vida_pokemon();
-                vida_pok_adversario = String.valueOf(GeraPokemon.vida);
-            }
-
-    public static void novoadversario()
+    public static void guarda_novo_adversario()
     {
         pokemons_adversario_stats.add(nome_pok_adversario);
         pokemons_adversario_stats.add(tipo_poK_adversario);

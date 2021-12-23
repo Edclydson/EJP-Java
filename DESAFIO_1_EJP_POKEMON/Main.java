@@ -1,45 +1,11 @@
 package DESAFIO_1_EJP_POKEMON;
-import java.util.Random;
 import javax.swing.JOptionPane;
-
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.GeraPokemon;
+import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.Arena_PACKAGE.Batalha;
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.MeusPokemons;
 
 public class Main extends MeusPokemons
-{
-    
-    public String batalhaPokemon(String desafiante,int nvldesafiante,String escolhido,int nvlescolhido)
-    {
-        Random rand =new Random();
-        String vencedor = "";
-        if(nvldesafiante>nvlescolhido)
-        {
-            vencedor  = "O "+desafiante+" venceu a batalha";
-        }
-        else if(nvldesafiante<nvlescolhido)
-        {
-            vencedor = "O "+escolhido+" venceu a batalha";
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"O "+desafiante+" e o "+escolhido+" possuem o mesmo nivel, essa batalha vai ser muito dificil!");
-            int decisao = rand.nextInt(2);
-            if(decisao==1)
-            {
-                vencedor = "O "+desafiante+" venceu a batalha";
-            }
-            else if(decisao == 2)
-            {
-                vencedor = "O "+escolhido+" venceu a batalha";
-            }
-            else
-            {
-                vencedor = "Não houve um vencedor dessa batalha! Ambos pokemóns estão exaustos!";
-            }
-        }
-        return vencedor;
-    }
-        
+{        
     public static void main(String[] args)
     {
         GeraPokemon gr = new GeraPokemon();
@@ -68,7 +34,16 @@ public class Main extends MeusPokemons
                 }
                 case "4":
                 {
-                    continue;
+                    if(MeusPokemons.meus_pokemons.isEmpty() == true)
+                    {
+                        JOptionPane.showMessageDialog(null,"Você não pode entrar na Arena sem nenhum pokemon!");
+                        continue;
+                    }else
+                    {
+                        Batalha.cria_novo_adversario();
+                        Batalha.Arena();
+                        Batalha.luta();
+                    }
                 }
                 case "5":
                 {
@@ -77,5 +52,4 @@ public class Main extends MeusPokemons
             }
         }
     }
-
 }

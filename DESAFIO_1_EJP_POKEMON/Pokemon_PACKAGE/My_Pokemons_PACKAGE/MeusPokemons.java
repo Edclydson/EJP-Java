@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 //ARMAZENA 3 POKEMONS E SEUS ATRIBUTOS (NOME,LVL,TIPO,VALOR_ATAQUE,VALOR_DEFESA)
 public class MeusPokemons
 {
-    static Map<String,ArrayList> meus_pokemons = new HashMap<>();
+    public static Map<String,ArrayList> meus_pokemons = new HashMap<>();
     static ArrayList<String> pokemon1_stats = new ArrayList<>();
     static ArrayList<String> pokemon2_stats = new ArrayList<>();
     static ArrayList<String> pokemon3_stats = new ArrayList<>();
