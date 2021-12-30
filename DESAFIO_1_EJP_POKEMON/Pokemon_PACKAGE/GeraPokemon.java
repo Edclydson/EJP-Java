@@ -1,10 +1,7 @@
 package DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -78,8 +75,7 @@ public class GeraPokemon extends MeusPokemons//POKEMON >>> NOME,LVL,VIDA,TIPO,VA
     }
     public static void lvlPokemon()
     {
-        level_pokemon = rand.nextInt(100);    // DEFININDO O LEVEL DO POKEMON       
-
+        level_pokemon = rand.nextInt(100);    // DEFININDO O LEVEL DO POKEMON
     }
     public static void vida_pokemon()
     {

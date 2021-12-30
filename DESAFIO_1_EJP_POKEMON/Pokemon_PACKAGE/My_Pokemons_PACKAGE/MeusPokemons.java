@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 //ARMAZENA 3 POKEMONS E SEUS ATRIBUTOS (NOME,LVL,TIPO,VALOR_ATAQUE,VALOR_DEFESA)
 public class MeusPokemons
 {
+    static Scanner scan = new Scanner(System.in);
     public static Map<String,ArrayList> meus_pokemons = new HashMap<>();
     static ArrayList<String> pokemon1_stats = new ArrayList<>();
     static ArrayList<String> pokemon2_stats = new ArrayList<>();
     static ArrayList<String> pokemon3_stats = new ArrayList<>();
-    static Scanner scan = new Scanner(System.in);
-    static String key_pokemon1 = "Pokemon_1_";
-    static String key_pokemon2 = "Pokemon_2_";
-    static String key_pokemon3 = "Pokemon_3_";
+    public static String key_pokemon1 = "Pokemon_1_";
+    public static String key_pokemon2 = "Pokemon_2_";
+    public static String key_pokemon3 = "Pokemon_3_";
 
     public static void newpokemon(String tipo_pok,String nome_pok,String lvl_pok,String vid_pok)
     {
