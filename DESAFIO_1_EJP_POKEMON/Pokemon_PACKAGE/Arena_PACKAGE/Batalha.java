@@ -20,6 +20,7 @@ public class Batalha extends SistemaCombate
     public Map<String,ArrayList> meus_pokemons_arena = new HashMap<>();
     public static ArrayList<String> meu_pokemon_arena = new ArrayList<>();
     public static ArrayList<String> pokemon_adversarios_stats_arena = new ArrayList<>();
+    public static String pkey;
 
 /**
  * 
@@ -65,6 +66,7 @@ public class Batalha extends SistemaCombate
             case 1: //SE HOUVER SO UM POKEMON
             {
                 meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokemon1));
+                pkey = MeusPokemons.key_pokemon1;
                 JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                 break;
             }
@@ -81,12 +83,14 @@ public class Batalha extends SistemaCombate
                     case "1":
                     {
                         meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokemon1));
+                        pkey = MeusPokemons.key_pokemon1;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
                     case "2":
                     {
                         meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokemon2));
+                        pkey = MeusPokemons.key_pokemon2;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
@@ -109,18 +113,21 @@ public class Batalha extends SistemaCombate
                     case "1":
                     {
                         meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokemon1));
+                        pkey = MeusPokemons.key_pokemon1;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
                     case "2":
                     {
                         meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokemon2));
+                        pkey = MeusPokemons.key_pokemon2;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
                     case "3":
                     {
                         meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokemon3));
+                        pkey = MeusPokemons.key_pokemon3;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
@@ -157,6 +164,8 @@ public class Batalha extends SistemaCombate
             if(vida_meu_pokemon <= 0)
             {
                 JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
+                MeusPokemons.meus_pokemons.remove(pkey);
+                meu_pokemon_arena.clear();
                 System.out.println("Deu ruim! :( ");
                 break;
             }
@@ -172,7 +181,7 @@ public class Batalha extends SistemaCombate
                 System.out.println("\n");
                 try { Thread.sleep (3000); } catch (InterruptedException ex) {}
                 acaoadversario();
-
+                try { Thread.sleep (3000); } catch (InterruptedException ex) {}
             }
 
         }
@@ -192,31 +201,60 @@ public class Batalha extends SistemaCombate
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
                     valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
                     valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    vida_pokemon_adversario = vida_pokemon_adversario - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                    System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");                    
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    
                 }
                 else if(buff_ataque_MP == true && buff_defesa_AD == false)
                 {
-                    System.out.println(meu_pokemon_arena.get(0)+" teve seu ataque buffado!");
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
                     valor_ataque_descontar_hp = valor_ataque_descontar_hp + Math.round(valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100));
-                    System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
-                    vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;                        
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
                 }
                 else if (buff_ataque_MP == false && buff_defesa_AD == true)
                 {
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
                     valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
                     valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
-                    vida_pokemon_adversario = vida_pokemon_adversario - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                        
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
                 }
                 else if(buff_ataque_MP == false && buff_defesa_AD == false)
                 {
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;
-                    
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
                 }
             }
             case "ad": //POKEMON ADVERSARIO ATACA
@@ -226,28 +264,60 @@ public class Batalha extends SistemaCombate
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
                     valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
                     valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+meu_pokemon_arena.get(0)+"!");
-                    vida_meu_pokemon = vida_meu_pokemon - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque); 
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    
                 }
                 else if(buff_ataque_AD == true && buff_defesa_MP == false)
                 {                     
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
                     valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                    System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+meu_pokemon_arena.get(0)+"!");
-                    vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp;
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
                 }
                 else if (buff_ataque_AD == false && buff_defesa_MP == true)
                 {
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
                     valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
                     valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+meu_pokemon_arena.get(0)+"!");
-                    vida_meu_pokemon = vida_meu_pokemon - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);    
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
                 }
                 else if(buff_ataque_MP == false && buff_defesa_AD == false)
                 {
                     valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp;
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
                 }
             }
         }
@@ -264,6 +334,7 @@ public class Batalha extends SistemaCombate
             case "1":
             {
                 calc_do_dano(minha_key);
+                System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
             }
             case "2":
             {
@@ -271,7 +342,7 @@ public class Batalha extends SistemaCombate
             }
             case "3":
             {
-                System.out.println(meu_pokemon_arena.get(0)+" ainda tem: "+vida_meu_pokemon);
+                System.out.println("O seu "+meu_pokemon_arena.get(0)+" ainda tem: "+vida_meu_pokemon);
             }
         }
 
@@ -286,6 +357,7 @@ public class Batalha extends SistemaCombate
         if(ia <= 85)
         {
             calc_do_dano(ad_key);
+            System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em seu "+meu_pokemon_arena.get(0)+"!");
         }
         else if(ia >85 && ia <= 100)
         {
