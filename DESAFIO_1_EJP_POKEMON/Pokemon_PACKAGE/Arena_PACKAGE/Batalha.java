@@ -22,16 +22,6 @@ public class Batalha extends SistemaCombate
     public static ArrayList<String> pokemon_adversarios_stats_arena = new ArrayList<>();
     public static String pkey;
 
-/**
- * 
- * C  O  I  S  A  S    P  A  R  A    F  A  Z  E  R   
- 
- ### ARRUMAR VALORES DOS DANO PROVOCADOS
-
- 
- 
- */    
-
     public static void cria_novo_adversario()
     {
         while(true)
