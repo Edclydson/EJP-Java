@@ -31,9 +31,6 @@ public class Batalha extends SistemaCombate
  
  */    
 
-   
-
-   
     public static void cria_novo_adversario()
     {
         while(true)
@@ -155,13 +152,29 @@ public class Batalha extends SistemaCombate
         definindo_stats_pokemon(Integer.parseInt(meu_pokemon_arena.get(2)), minha_key);
         definindo_stats_pokemon(Integer.parseInt(pokemon_adversarios_stats_arena.get(2)), ad_key);
         JOptionPane.showMessageDialog(null,"A Batalha vai começar!");
-        while(vida_meu_pokemon != 0 || vida_pokemon_adversario != 0)
+        while(true)
         {
-            acaojogador();
-            System.out.println("\n");
-            try { Thread.sleep (3000); } catch (InterruptedException ex) {}
+            if(vida_meu_pokemon <= 0)
+            {
+                JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
+                System.out.println("Deu ruim! :( ");
+                break;
+            }
+            else if(vida_pokemon_adversario <= 0)
+            {
+                JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
+                System.out.println("Parabens!!!");
+                break;
+            }
+            else
+            {
+                acaojogador();
+                System.out.println("\n");
+                try { Thread.sleep (3000); } catch (InterruptedException ex) {}
+                acaoadversario();
 
-            acaoadversario();
+            }
+
         }
     }
 
@@ -176,216 +189,76 @@ public class Batalha extends SistemaCombate
                  //SE MEU ATAQUE TIVER BUFFADO E SE A DEFESA DO ADVERSARIO TEM BUFF
                 if(buff_ataque_MP == true && buff_defesa_AD == true)
                 {
-                    if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0 )
-                    {
-                        JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                        System.out.println("Parabens!!!");
-                    }
-                    else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                    {
-                        JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                        System.out.println("Deu ruim! :( ");
-                    }
-                    else
-                    {
-                        valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                        valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                        valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                        vida_pokemon_adversario = vida_pokemon_adversario - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                        System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
-                    }
-                    
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    vida_pokemon_adversario = vida_pokemon_adversario - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");                    
                 }
                 else if(buff_ataque_MP == true && buff_defesa_AD == false)
                 {
-                        if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Parabens!!!");
-                        }
-                        else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Deu ruim! :( ");
-                        }
-                        else
-                        {
-                            System.out.println(meu_pokemon_arena.get(0)+" teve seu ataque buffado!");
-                            valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                            valor_ataque_descontar_hp = valor_ataque_descontar_hp + Math.round(valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100));
-                            System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
-                            vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;
-                        }
+                    System.out.println(meu_pokemon_arena.get(0)+" teve seu ataque buffado!");
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + Math.round(valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100));
+                    System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
+                    vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;                        
                 }
                 else if (buff_ataque_MP == false && buff_defesa_AD == true)
                 {
-                        if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Parabens!!!");
-                        }
-                        else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Deu ruim! :( ");
-                        }
-                        else
-                        { 
-                            valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                            valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                            valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                            System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
-                            vida_pokemon_adversario = vida_pokemon_adversario - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                        }
-                    }
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
+                    vida_pokemon_adversario = vida_pokemon_adversario - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                        
+                }
                 else if(buff_ataque_MP == false && buff_defesa_AD == false)
                 {
-                        if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Parabens!!!");
-                        }
-                        else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Deu ruim! :( ");
-                        }
-                        else
-                        {
-                            valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                            vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;
-                        }
-                    }
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;
+                    
+                }
             }
             case "ad": //POKEMON ADVERSARIO ATACA
             {
                 if(buff_ataque_AD == true && buff_defesa_MP == true)
                 {
-                    if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                    {
-                        JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                        System.out.println("Parabens!!!");
-                    }
-                    else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                    {
-                        JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                        System.out.println("Deu ruim! :( ");
-                    }
-                    else
-                    {
-                        valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                        valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                        valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                        System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+meu_pokemon_arena.get(0)+"!");
-                        vida_meu_pokemon = vida_meu_pokemon - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                    }
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+meu_pokemon_arena.get(0)+"!");
+                    vida_meu_pokemon = vida_meu_pokemon - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque); 
                 }
                 else if(buff_ataque_AD == true && buff_defesa_MP == false)
                 {                     
-                    if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                    {
-                        JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                        System.out.println("Parabens!!!");
-                    }
-                    else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                    {
-                        JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                        System.out.println("Deu ruim! :( ");
-                    }
-                    else
-                    {
-                        valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                        valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                        System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+meu_pokemon_arena.get(0)+"!");
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp;
-                    }
-                    }
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+meu_pokemon_arena.get(0)+"!");
+                    vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp;
+                }
                 else if (buff_ataque_AD == false && buff_defesa_MP == true)
                 {
-                        if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Parabens!!!");
-                        }
-                        else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Deu ruim! :( ");
-                        }
-                        else
-                        {
-                            valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                            valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                            valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                            System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+meu_pokemon_arena.get(0)+"!");
-                            vida_meu_pokemon = vida_meu_pokemon - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                        }
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+(valor_ataque_descontar_hp - valor_defesa_descontar_ataque)+" de dano em "+meu_pokemon_arena.get(0)+"!");
+                    vida_meu_pokemon = vida_meu_pokemon - (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);    
                 }
                 else if(buff_ataque_MP == false && buff_defesa_AD == false)
                 {
-                        if(vida_pokemon_adversario == 0 || vida_pokemon_adversario < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Parabens!!!");
-                        }
-                        else if(vida_meu_pokemon == 0 || vida_meu_pokemon < 0)
-                        {
-                            JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                            System.out.println("Deu ruim! :( ");
-                        }
-                        else
-                        {
-                            valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                            vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp;
-                        }
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp;
                 }
             }
-            
         }
-        
     }
-    
-    
-    public static boolean morreu(int vida,String key)
-    {
         
-        
-        if(key.equals("m"))
-        {   
-            if(vida_meu_pokemon == 0)
-            {
-                JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                System.out.println("Deu ruim! :( ");
-                t = true;
-            }
-            else
-            {
-                t = false;
-            }
-        }    
-          
-        else if(key.equals("ad"))
-        {
-            if(vida_pokemon_adversario == 0)
-            {
-                JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+" venceu a batalha!!!");
-                System.out.println("Parabens!!!");
-                t = true;
-            }
-            else
-            {
-                t = false;
-            }
-        }
-        return t;
-    }
-
     public static void acaojogador()
     {
         String acao_jogador;
-        JOptionPane.showMessageDialog(null,"Qual a sua proxima ação?");
-        System.out.println("\n1-ATACAR\n2-DEFENDER\n3-VER O HP");
-        acao_jogador = scan.nextLine();
+        
+        System.out.println("\n Seu turno! \n");
+        acao_jogador = JOptionPane.showInputDialog(null, "\n1-ATACAR\n2-DEFENDER\n3-VER O HP");        
         switch(acao_jogador)
         {
             case "1":
@@ -406,6 +279,7 @@ public class Batalha extends SistemaCombate
 
     public static void acaoadversario()
     {
+        System.out.println("\n Turno do Adversário! \n");
         Random rand = new Random();
         int ia;
         ia = rand.nextInt(1,100);
