@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.GeraPokemon;
 
 public class AdversariosPokemons extends GeraPokemon  
-//ARMAZENAR 3 POKEMONS E SEUS ATRIBUTOS (NOME,TIPO,LVL,VIDA,VALOR_ATAQUE,VALOR_DEFESA)
 {
     GeraPokemon ger = new GeraPokemon();
     public static ArrayList<String> pokemons_adversario_stats = new ArrayList<String>();
