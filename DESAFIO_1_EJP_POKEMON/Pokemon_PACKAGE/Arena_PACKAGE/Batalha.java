@@ -67,8 +67,8 @@ public class Batalha extends SistemaCombate
                 System.out.println("---------POKEMON-2------------------------");
                 System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(3)+ "\n1-Voltar");
                 System.out.println("Digite o numero do pokemon que deseja escolher:");
-                escolha_pokemon = scan.nextLine();
-                switch(escolha_pokemon)
+                escolha_pokebola = scan.nextLine();
+                switch(escolha_pokebola)
                 {
                     case "1":
                     {
@@ -97,8 +97,8 @@ public class Batalha extends SistemaCombate
                 System.out.println("---------POKEBOLA-3------------------------");
                 System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(3)+ "\n1-Voltar");
                 System.out.println("Digite o numero da pokebola que deseja escolher:");
-                escolha_pokemon = scan.nextLine();
-                switch(escolha_pokemon)
+                escolha_pokebola = scan.nextLine();
+                switch(escolha_pokebola)
                 {
                     case "1":
                     {
