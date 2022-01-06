@@ -132,13 +132,33 @@ public class Batalha extends SistemaCombate
     //CRIAR AREA DE BATALHA
     public static void Arena()
     {
-        JOptionPane.showMessageDialog(null,"Você entrou na Arena!\n");
-        EscolhaSeuPokemon();
-        cria_novo_adversario();
-        pokemon_adversarios_stats_arena.addAll(AdversariosPokemons.pokemons_adversario_stats);
+        String escolha_arena;
+        escolha_arena = JOptionPane.showInputDialog(null, "Você entrou na Arena!\nO que gostaria de fazer?\n1-Escolher pokemon\n2-Lutar\n3-Sair da Arena");
+   
+        switch(escolha_arena)
+        {
+            case "1":
+            {
+                EscolhaSeuPokemon();
+                break;
+            }
+            case "2":
+            {
+                luta();
+                break;
+            }
+            case "3":
+            {
+                break;
+            }
+            default:{}
+        }       
+    
     }
     public static void luta() 
     {
+        cria_novo_adversario();
+        pokemon_adversarios_stats_arena.addAll(AdversariosPokemons.pokemons_adversario_stats);
         System.out.println("É hora da batalha!!!");
         JOptionPane.showMessageDialog(null,"Seu adversario será:\nPokemon: "+pokemon_adversarios_stats_arena.get(0)+"\nTipo: "+pokemon_adversarios_stats_arena.get(1)+"\nLevel: "+pokemon_adversarios_stats_arena.get(2)+"\nVida: "+pokemon_adversarios_stats_arena.get(3));
 

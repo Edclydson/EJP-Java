@@ -40,9 +40,7 @@ public class Main extends MeusPokemons
                         continue;
                     }else
                     {
-                       // Batalha.cria_novo_adversario();
                         Batalha.Arena();
-                        Batalha.luta();
                         continue;
                     }
                 }
