@@ -1,5 +1,6 @@
 package DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.Arena_PACKAGE;
 import java.util.ArrayList;
+import java.util.Random;
 public class SistemaCombate 
 {
     //BUFFS E NERFS
@@ -268,4 +269,138 @@ public class SistemaCombate
         }
     }
 
+    public static void hit(String key)
+    {
+        Random rand = new Random();
+        switch(key)
+        {
+            case "m": //MEU POKEMON ATACA
+            {
+                 //SE MEU ATAQUE TIVER BUFFADO E SE A DEFESA DO ADVERSARIO TEM BUFF
+                if(buff_ataque_MP == true && buff_defesa_AD == true)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    
+                }
+                else if(buff_ataque_MP == true && buff_defesa_AD == false)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + Math.round(valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100));
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                }
+                else if (buff_ataque_MP == false && buff_defesa_AD == true)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                }
+                else if(buff_ataque_MP == false && buff_defesa_AD == false)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                    else
+                    {
+                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
+                    }
+                }
+            }
+            case "ad": //POKEMON ADVERSARIO ATACA
+            {
+                if(buff_ataque_AD == true && buff_defesa_MP == true)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    
+                }
+                else if(buff_ataque_AD == true && buff_defesa_MP == false)
+                {                     
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                }
+                else if (buff_ataque_AD == false && buff_defesa_MP == true)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
+                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
+                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                }
+                else if(buff_ataque_MP == false && buff_defesa_AD == false)
+                {
+                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
+                    if(valor_ataque_descontar_hp <= 0)
+                    {
+                        valor_ataque_descontar_hp = 0;
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                    else
+                    {
+                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
+                    }
+                }
+            }
+        }
+    }
 }

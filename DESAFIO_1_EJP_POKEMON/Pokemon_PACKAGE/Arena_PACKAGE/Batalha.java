@@ -169,6 +169,7 @@ public class Batalha extends SistemaCombate
         //CHAMA STATS
         definindo_stats_pokemon(Integer.parseInt(meu_pokemon_arena.get(2)), minha_key);
         definindo_stats_pokemon(Integer.parseInt(pokemon_adversarios_stats_arena.get(2)), ad_key);
+        //BATALHA
         JOptionPane.showMessageDialog(null,"A Batalha vai começar!");
         while(true)
         {
@@ -198,142 +199,7 @@ public class Batalha extends SistemaCombate
         }
     }
 
-    //RECEBE CHAVE PARA SABER QUEM ESTA ATACANDO E DEFENDENDO
-    public static void calc_do_dano(String key)
-    {
-        Random rand = new Random();
-        switch(key)
-        {
-            case "m": //MEU POKEMON ATACA
-            {
-                 //SE MEU ATAQUE TIVER BUFFADO E SE A DEFESA DO ADVERSARIO TEM BUFF
-                if(buff_ataque_MP == true && buff_defesa_AD == true)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                    else
-                    {
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                    
-                }
-                else if(buff_ataque_MP == true && buff_defesa_AD == false)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + Math.round(valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100));
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                    else
-                    {
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                }
-                else if (buff_ataque_MP == false && buff_defesa_AD == true)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                    else
-                    {
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                }
-                else if(buff_ataque_MP == false && buff_defesa_AD == false)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                    else
-                    {
-                        vida_pokemon_adversario = vida_pokemon_adversario - valor_ataque_descontar_hp;  
-                    }
-                }
-            }
-            case "ad": //POKEMON ADVERSARIO ATACA
-            {
-                if(buff_ataque_AD == true && buff_defesa_MP == true)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                    else
-                    {
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                    
-                }
-                else if(buff_ataque_AD == true && buff_defesa_MP == false)
-                {                     
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    valor_ataque_descontar_hp = valor_ataque_descontar_hp + valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                    else
-                    {
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                }
-                else if (buff_ataque_AD == false && buff_defesa_MP == true)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    valor_ataque_descontar_hp = valor_ataque_descontar_hp - valor_ataque_descontar_hp * (rand.nextInt(5,18) / 100);
-                    valor_defesa_descontar_ataque = rand.nextInt(dano_def_a_b_meu_pokemon.get(0),dano_def_a_b_meu_pokemon.get(1));
-                    valor_ataque_descontar_hp = (valor_ataque_descontar_hp - valor_defesa_descontar_ataque);
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                    else
-                    {
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                }
-                else if(buff_ataque_MP == false && buff_defesa_AD == false)
-                {
-                    valor_ataque_descontar_hp = rand.nextInt(dano_def_a_b_pokemon_ad.get(0),dano_def_a_b_pokemon_ad.get(1));
-                    if(valor_ataque_descontar_hp <= 0)
-                    {
-                        valor_ataque_descontar_hp = 0;
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                    else
-                    {
-                        vida_meu_pokemon = vida_meu_pokemon - valor_ataque_descontar_hp; 
-                    }
-                }
-            }
-        }
-    }
-        
+    //RECEBE CHAVE PARA SABER QUEM ESTA ATACANDO E DEFENDENDO        
     public static void acaojogador()
     {
         String acao_jogador;
@@ -344,7 +210,7 @@ public class Batalha extends SistemaCombate
         {
             case "1":
             {
-                calc_do_dano(minha_key);
+                hit(minha_key);
                 System.out.println(meu_pokemon_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em "+pokemon_adversarios_stats_arena.get(0)+"!");
             }
             case "2":
@@ -367,7 +233,7 @@ public class Batalha extends SistemaCombate
         ia = rand.nextInt(1,100);
         if(ia <= 85)
         {
-            calc_do_dano(ad_key);
+            hit(ad_key);
             System.out.println(pokemon_adversarios_stats_arena.get(0)+" atacou e deu "+valor_ataque_descontar_hp+" de dano em seu "+meu_pokemon_arena.get(0)+"!");
         }
         else if(ia >85 && ia <= 100)
