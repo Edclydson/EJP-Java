@@ -8,7 +8,8 @@ import java.util.Random;
 
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.MeusPokemons;
 
-public class GeraPokemon extends MeusPokemons//POKEMON >>> NOME,LVL,VIDA,TIPO,VALOR_ATAQUE,VALOR_DEFESA
+public class GeraPokemon extends MeusPokemons
+//POKEMON >>> NOME,LVL,TIPO,VIDA
 {
     
     public static List<String> pokemon_t_fogo = new ArrayList<>();
@@ -75,7 +76,7 @@ public class GeraPokemon extends MeusPokemons//POKEMON >>> NOME,LVL,VIDA,TIPO,VA
     }
     public static void lvlPokemon()
     {
-        level_pokemon = rand.nextInt(100);    // DEFININDO O LEVEL DO POKEMON
+        level_pokemon = rand.nextInt(1,100);    // DEFININDO O LEVEL DO POKEMON
     }
     public static void vida_pokemon()
     {
