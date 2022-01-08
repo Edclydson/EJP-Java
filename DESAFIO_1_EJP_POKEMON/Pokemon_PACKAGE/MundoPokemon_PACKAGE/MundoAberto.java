@@ -18,16 +18,24 @@ public class MundoAberto
             if(z<= 25)
             {
                 System.out.println("Andando...");
+                try { Thread.sleep (2000); } catch (InterruptedException ex) {}
             }
             else if(z>=26 && z <= 40)
             {
                 JOptionPane.showMessageDialog(null,"Você foi atacado por um pokemon selvagem!");
+                try { Thread.sleep (2000); } catch (InterruptedException ex) {}
             }
             else
             {
                 JOptionPane.showMessageDialog(null,"Você encontrou uma pokebola!");
+                try { Thread.sleep (2000); } catch (InterruptedException ex) {}
             }
         }
+    }
+
+    public static void LutaMundoAberto()
+    {
+        //criar area de luta no mundo aberto
     }
     
 }

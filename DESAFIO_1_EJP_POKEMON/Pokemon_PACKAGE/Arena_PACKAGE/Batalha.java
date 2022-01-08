@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-import java.lang.Thread; 
 
 import javax.swing.JOptionPane;
 
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.GeraPokemon;
+import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.Treinador;
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.AdversariosPokemons;
 import DESAFIO_1_EJP_POKEMON.Pokemon_PACKAGE.My_Pokemons_PACKAGE.MeusPokemons;
 
@@ -51,11 +51,11 @@ public class Batalha extends SistemaCombate
     {
         Scanner scan = new Scanner(System.in);
         String escolha_pokebola;
-        switch(MeusPokemons.meus_pokemons.size())
+        switch(Treinador.meuspokemons.size())
         {
             case 1: //SE HOUVER SO UMA POKEBOLA
             {
-                meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1));
+                meu_pokemon_arena.addAll(Treinador.meuspokemons.get(MeusPokemons.key_pokebola1));
                 pkey = MeusPokemons.key_pokebola1;
                 JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                 break;
@@ -63,23 +63,23 @@ public class Batalha extends SistemaCombate
             case 2: //SE HOUVER 2 POKEBOLAS
             {
                 System.out.println("---------POKEMON-1------------------------");
-                System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(3));
+                System.out.println("Nome: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(0)+"\nTipo: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(1)+"\nLevel: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(2)+"\nVida: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(3));
                 System.out.println("---------POKEMON-2------------------------");
-                System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(3)+ "\n1-Voltar");
+                System.out.println("Nome: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(0)+"\nTipo: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(1)+"\nLevel: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(2)+"\nVida: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(3)+ "\n1-Voltar");
                 System.out.println("Digite o numero do pokemon que deseja escolher:");
                 escolha_pokebola = scan.nextLine();
                 switch(escolha_pokebola)
                 {
                     case "1":
                     {
-                        meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1));
+                        meu_pokemon_arena.addAll(Treinador.meuspokemons.get(MeusPokemons.key_pokebola1));
                         pkey = MeusPokemons.key_pokebola1;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
                     case "2":
                     {
-                        meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2));
+                        meu_pokemon_arena.addAll(Treinador.meuspokemons.get(MeusPokemons.key_pokebola2));
                         pkey = MeusPokemons.key_pokebola2;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
@@ -91,32 +91,32 @@ public class Batalha extends SistemaCombate
             case 3://SE HOUVER AS 3 POKEBOLAS
             {
                 System.out.println("---------POKEBOLA-1------------------------");
-                System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1).get(3));
+                System.out.println("Nome: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(0)+"\nTipo: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(1)+"\nLevel: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(2)+"\nVida: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola1).get(3));
                 System.out.println("---------POKEBOLA-2------------------------");
-                System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2).get(3));
+                System.out.println("Nome: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(0)+"\nTipo: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(1)+"\nLevel: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(2)+"\nVida: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola2).get(3));
                 System.out.println("---------POKEBOLA-3------------------------");
-                System.out.println("Nome: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(0)+"\nTipo: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(1)+"\nLevel: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(2)+"\nVida: "+MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3).get(3)+ "\n1-Voltar");
+                System.out.println("Nome: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola3).get(0)+"\nTipo: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola3).get(1)+"\nLevel: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola3).get(2)+"\nVida: "+Treinador.meuspokemons.get(MeusPokemons.key_pokebola3).get(3)+ "\n1-Voltar");
                 System.out.println("Digite o numero da pokebola que deseja escolher:");
                 escolha_pokebola = scan.nextLine();
                 switch(escolha_pokebola)
                 {
                     case "1":
                     {
-                        meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola1));
+                        meu_pokemon_arena.addAll(Treinador.meuspokemons.get(MeusPokemons.key_pokebola1));
                         pkey = MeusPokemons.key_pokebola1;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
                     case "2":
                     {
-                        meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola2));
+                        meu_pokemon_arena.addAll(Treinador.meuspokemons.get(MeusPokemons.key_pokebola2));
                         pkey = MeusPokemons.key_pokebola2;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
                     }
                     case "3":
                     {
-                        meu_pokemon_arena.addAll(MeusPokemons.meus_pokemons.get(MeusPokemons.key_pokebola3));
+                        meu_pokemon_arena.addAll(Treinador.meuspokemons.get(MeusPokemons.key_pokebola3));
                         pkey = MeusPokemons.key_pokebola3;
                         JOptionPane.showMessageDialog(null,meu_pokemon_arena.get(0)+", eu escolho você!");
                         break;
@@ -176,7 +176,7 @@ public class Batalha extends SistemaCombate
             if(vida_meu_pokemon <= 0)
             {
                 JOptionPane.showMessageDialog(null,pokemon_adversarios_stats_arena.get(0)+" venceu a batalha!!!");
-                MeusPokemons.meus_pokemons.remove(pkey);
+                Treinador.meuspokemons.remove(pkey);
                 meu_pokemon_arena.clear();
                 System.out.println("Deu ruim! :( ");
                 break;
