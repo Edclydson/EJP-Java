@@ -7,58 +7,69 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import DESAFIO_2_EJP_BANCO.CaixaEletronico;
+
 public class Banco 
 {   
     ///ADD NOME DOS BANCOS
     ///CHECAR SE O NUMERO DA CONTA JA ESTA SENDO UTILIZADO
     public static String NomeBanco;
-    public static int id_conta;
+    public static String id_conta;
     public static ArrayList<String> Cliente = new ArrayList<>();
-    public static Map<Integer,ArrayList> ClientesCadastrados = new HashMap<>();
+    public static Map<String,ArrayList> ClientesCadastrados = new HashMap<>();
     public static Random rand = new Random();
-    public static void ConsultaCliente(int id)
+    public static void ConsultaCliente(String id)
     {
         System.out.println("Checando dados...");
         try { Thread.sleep (2000); } catch (InterruptedException ex) {}
         if(ClientesCadastrados.containsKey(id) == true)
         {
+            CaixaEletronico.user_cad = true;
             System.out.println("Acessando a conta...");
             try { Thread.sleep (2000); } catch (InterruptedException ex) {}
         }
         else
         {
+            CaixaEletronico.user_cad = false;
             System.out.println("Usuário não cadastrado!");
         }
     }
 
     public static void CadastraCliente()
     {
-        
-        Cliente.add(JOptionPane.showInputDialog(null,"Digite seu nome: "));
-        Cliente.add(JOptionPane.showInputDialog(null,"Digite seu cpf: "));
+        String nome_new_usuario = JOptionPane.showInputDialog(null,"Digite seu nome: ");
+        String cpf_new_cpf = JOptionPane.showInputDialog(null,"Digite seu cpf: ");
+        String id_new_usuario;
+        String id_new_conta;
         while(true)
         {
             int id_user = rand.nextInt(1000,100000);
             if(ClientesCadastrados.containsKey(id_user))
             {
-                JOptionPane.showMessageDialog(null,"Anote o numero da sua conta, ela será essencial para acessar-la: "+id_user);
-                Usuario.id_usuario = id_user;
-                Cliente.add(String.valueOf(Usuario.id_usuario));    
-                CriaConta();
-                break;
+                continue;
             }
             else
             {
-                continue;
+                id_new_usuario = String.valueOf(id_user);
+                JOptionPane.showMessageDialog(null,"Anote o numero da sua conta, ela será essencial para acessar-la: "+id_user);
+                Usuario.id_usuario = id_user;
+                id_new_conta = CriaConta();
+                break;
             }
         }
-
+        Cliente.add(id_new_usuario);
+        Cliente.add(id_new_conta);
+        Cliente.add(cpf_new_cpf);
+        Cliente.add(nome_new_usuario);
+        ClientesCadastrados.put(id_new_usuario,Cliente);
         JOptionPane.showMessageDialog(null, "Usuário Cadastrado!");
     }
-    public static void CriaConta()
+    public static String CriaConta()
     {
-        id_conta = rand.nextInt(100000);
+        int account = rand.nextInt(100000);
+        id_conta = String.valueOf(account);
         Conta.setId_Conta(id_conta);
         Conta.setSaldo_Conta(0);
+        return id_conta;
     }
 }
