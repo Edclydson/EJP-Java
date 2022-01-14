@@ -11,37 +11,37 @@ public class ATVEJP_05
         int total = n_1 + n_2;
         System.out.println("A soma de "+n_1+" mais "+n_2+" é igual a "+total);
     }
-    public static void subtracao(int n1,int n2)
+    public static void subtracao(double n1,double n2)
     {
-        int n_1 = n1;
-        int n_2 = n1;
+        double n_1 = n1;
+        double n_2 = n1;
         if(n_1 <= 0 || n_2 <= 0)
         {
             JOptionPane.showMessageDialog(null,"Não é possivel realizar a divisão!");
         }else
         {
-            int total = n_1 - n_2;
+            double total = n_1 - n_2;
             System.out.println(n_1+" menos "+n_2+" é igual a "+total);
         }
     }
-    public static void multiplicacao(int n1, int n2)
+    public static void multiplicacao(double n1, double n2)
     {
-        int n_1 = n1;
-        int n_2 = n1;
-        int total = n_1 * n_2;
+        double n_1 = n1;
+        double n_2 = n1;
+        double total = n_1 * n_2;
         System.out.println(+n_1+" multiplicado por "+n_2+" é igual a "+total);
     }
-    public static void divisao(int n1, int n2)
+    public static void divisao(double n1, double n2)
     {
-        int n_1 = n1;
-        int n_2 = n1;
+        double n_1 = n1;
+        double n_2 = n1;
         if(n_1 <= 0 || n_2 <= 0)
         {
             JOptionPane.showMessageDialog(null,"Não é possivel realizar a divisão!");
         }
         else
         {
-            int total = n_1 / n_2;
+            double total = n_1 / n_2;
             System.out.println(n_1+" dividido por "+n_2+" é igual a "+total);
         }
     }
