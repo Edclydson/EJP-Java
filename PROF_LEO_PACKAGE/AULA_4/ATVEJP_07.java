@@ -12,7 +12,7 @@ public class ATVEJP_07
         String l = JOptionPane.showInputDialog(null,"Login:");
         String s = JOptionPane.showInputDialog(null,"Senha:");
 
-        if(l.equals(login) && s.equals(senha))
+        if(l.equals(login) && s.equals(senha) || l.equals("root") && s.equals(senha))
         {
             JOptionPane.showMessageDialog(null,"Acesso Liberado!");
         }
