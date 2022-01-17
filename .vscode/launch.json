@@ -1,0 +1,190 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV10EJP",
+            "request": "launch",
+            "mainClass": "ATV10EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV11EJP",
+            "request": "launch",
+            "mainClass": "ATV11EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV12EJP",
+            "request": "launch",
+            "mainClass": "ATV12EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV13EJP",
+            "request": "launch",
+            "mainClass": "ATV13EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV14EJP",
+            "request": "launch",
+            "mainClass": "ATV14EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV15EJP",
+            "request": "launch",
+            "mainClass": "ATV15EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV16EJP",
+            "request": "launch",
+            "mainClass": "ATV16EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV17EJP",
+            "request": "launch",
+            "mainClass": "ATV17EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV1EJP",
+            "request": "launch",
+            "mainClass": "ATV1EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV2EJP",
+            "request": "launch",
+            "mainClass": "ATV2EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV3EJP",
+            "request": "launch",
+            "mainClass": "ATV3EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV4EJP",
+            "request": "launch",
+            "mainClass": "ATV4EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV5EJP",
+            "request": "launch",
+            "mainClass": "ATV5EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV6EJP",
+            "request": "launch",
+            "mainClass": "ATV6EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV7EJP",
+            "request": "launch",
+            "mainClass": "ATV7EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV8EJP",
+            "request": "launch",
+            "mainClass": "ATV8EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATV9EJP",
+            "request": "launch",
+            "mainClass": "ATV9EJP",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_01",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_1.ATVEJP_01",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_02",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_1.ATVEJP_02",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_03",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_2.ATVEJP_03",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_04",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_2.ATVEJP_04",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_05",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_3.ATVEJP_05",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_06",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_3.ATVEJP_06",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ATVEJP_07",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_4.ATVEJP_07",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela",
+            "request": "launch",
+            "mainClass": "PROF_LEO_PACKAGE.AULA_5.Tela",
+            "projectName": "EJP-Java_2b9614a4"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
