@@ -2,7 +2,6 @@ package DESAFIO_3_EJP_BOLETIM;
 
 public class estudante 
 {
-
     private String nome;
     private String signo;
     private double nota1,nota2,nota3,nota4;
@@ -59,7 +58,5 @@ public class estudante
     }
     public void setMedia(double media) {
         this.media = media;
-    }
-
-    
+    }   
 }
