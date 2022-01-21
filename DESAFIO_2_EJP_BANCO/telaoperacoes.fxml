@@ -33,7 +33,6 @@
 -->
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -42,9 +41,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="telacaixa" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DESAFIO_2_EJP_BANCO.caixaeletronicoController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DESAFIO_2_EJP_BANCO.operacoesController">
   <children>
-    <AnchorPane fx:id="telainicio" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="640.0">
                <fill>
@@ -79,28 +78,31 @@
                   </LinearGradient>
                </fill>
             </Rectangle>
-        <Label alignment="CENTER" layoutX="211.0" layoutY="25.0" style="&#10;" text="Caixa Eletrônico" textAlignment="CENTER" textFill="#f8f6f6" wrapText="false">
-          <font>
-            <Font name="Source Sans Pro Black" size="31.0" />
-          </font>
-        </Label>
-            <Button fx:id="btopscartao" layoutX="48.0" layoutY="247.0" mnemonicParsing="false" onAction="#opsemcartao" prefHeight="54.0" prefWidth="134.0" text="Operação Sem Cartão" />
-            <Button fx:id="btinserircartao" layoutX="48.0" layoutY="308.0" mnemonicParsing="false" onAction="#inserecartao" prefHeight="54.0" prefWidth="134.0" text="Inserir Cartão" />
-            <Label layoutX="211.0" layoutY="259.0" text="Inicie uma operação sem inserir o cartão." textFill="WHITE">
+            <Button fx:id="btsaque" contentDisplay="TEXT_ONLY" layoutX="11.0" layoutY="146.0" mnemonicParsing="false" onAction="#sacar" prefHeight="54.0" prefWidth="245.0" text="S A Q U E" textAlignment="CENTER">
                <font>
-                  <Font name="Source Sans Pro Light Italic" size="21.0" />
+                  <Font name="Source Sans Pro Light" size="22.0" />
                </font>
-            </Label>
-            <Label layoutX="211.0" layoutY="320.0" text="Inicie uma operação inserindo o cartão." textFill="WHITE">
+            </Button>
+            <Button fx:id="btextrato" contentDisplay="TEXT_ONLY" layoutX="384.0" layoutY="200.0" mnemonicParsing="false" onAction="#verextrato" prefHeight="54.0" prefWidth="245.0" text="E X T R A T O" textAlignment="CENTER">
                <font>
-                  <Font name="Source Sans Pro Light Italic" size="21.0" />
+                  <Font name="Source Sans Pro Light" size="22.0" />
                </font>
-            </Label>
-            <Label layoutX="198.0" layoutY="142.0" text="Bem vindo(a)!" textFill="#f5f5f5">
+            </Button>
+            <Button fx:id="btdeposito" contentDisplay="TEXT_ONLY" layoutX="384.0" layoutY="92.0" mnemonicParsing="false" onAction="#depositar" prefHeight="54.0" prefWidth="245.0" text="D E P O S I T O" textAlignment="CENTER">
                <font>
-                  <Font name="Source Sans Pro Semibold" size="40.0" />
+                  <Font name="Source Sans Pro Light" size="22.0" />
                </font>
-            </Label>
+            </Button>
+            <Button fx:id="bttransferencia" contentDisplay="TEXT_ONLY" layoutX="11.0" layoutY="254.0" mnemonicParsing="false" onAction="#transferir" prefHeight="54.0" prefWidth="245.0" text="T R A N F E R E N C I A " textAlignment="CENTER">
+               <font>
+                  <Font name="Source Sans Pro Light" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btsair" contentDisplay="TEXT_ONLY" layoutX="384.0" layoutY="308.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="245.0" text="S A I R" textAlignment="CENTER">
+               <font>
+                  <Font name="Source Sans Pro Light" size="22.0" />
+               </font>
+            </Button>
       </children>
     </AnchorPane>
   </children>

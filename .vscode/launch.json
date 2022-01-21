@@ -22,7 +22,7 @@
             "name": "Launch CaixaEletronico",
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.CaixaEletronico",
-            "projectName": "EJP-Java_2b9614a4"
+            "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
@@ -30,7 +30,7 @@
             "name": "Launch mainCaixaEletronico",
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.mainCaixaEletronico",
-            "projectName": "EJP-Java_2b9614a4"
+            "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
@@ -39,6 +39,20 @@
             "request": "launch",
             "mainClass": "DESAFIO_3_EJP_BOLETIM.boletim",
             "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch lercartao",
+            "request": "launch",
+            "mainClass": "DESAFIO_2_EJP_BANCO.lercartao",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch operacoes",
+            "request": "launch",
+            "mainClass": "DESAFIO_2_EJP_BANCO.operacoes",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
