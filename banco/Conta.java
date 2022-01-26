@@ -25,15 +25,19 @@ public class Conta {
         this.saldo = saldo;
     }
     
-    public void sacar(double valorsacar)
+    public boolean sacar(double valorsacar)
     {
         if(this.saldo < valorsacar)
+        {
             System.out.println("Saldo Insuficiente");
+            return false;
+        }
         else
         {
             System.out.println("Transação autorizada");
             this.saldo -= valorsacar;
             System.out.println("Valor sacado:  R$"+this.saldo);
+            return true;
         }
     }
 }

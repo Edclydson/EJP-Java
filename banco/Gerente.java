@@ -1,18 +1,11 @@
 package banco;
 
-public class Gerente {
-    String nome;
-    private String cpf;
+public class Gerente extends Funcionario
+{
     private double salario;
     private int senha;
     private int numFuncGerenciados;
     
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
     public double getSalario() {
         return salario;
     }
@@ -38,7 +31,5 @@ public class Gerente {
             return true;
         else
             return false;
-    }
-    
-    
+    }    
 }
