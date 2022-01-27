@@ -11,9 +11,7 @@ import DESAFIO_2_EJP_BANCO.CaixaEletronico;
 
 public class Banco 
 {   
-    ///ADD NOME DOS BANCOS
     ///CHECAR SE O NUMERO DA CONTA JA ESTA SENDO UTILIZADO
-    public static String NomeBanco;
     public static String id_conta;
     public static ArrayList<String> Cliente = new ArrayList<>();
     public static Map<String,ArrayList> ClientesCadastrados = new HashMap<>();
@@ -52,7 +50,7 @@ public class Banco
             {
                 id_new_usuario = String.valueOf(id_user);
                 JOptionPane.showMessageDialog(null,"Anote o numero da sua conta, ela será essencial para acessar-la: "+id_user);
-                Usuario.id_usuario = id_user;
+                Usuario.setId_usuario(id_user) ;
                 id_new_conta = CriaConta();
                 break;
             }
