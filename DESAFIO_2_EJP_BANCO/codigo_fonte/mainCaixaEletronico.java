@@ -1,4 +1,4 @@
-package DESAFIO_2_EJP_BANCO;
+package DESAFIO_2_EJP_BANCO.codigo_fonte;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ public class mainCaixaEletronico extends Application{
     public void start(Stage estagio) throws Exception {
         stage = estagio;
         Scene cena;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("telainiciocaixa.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/DESAFIO_2_EJP_BANCO/telas/telainiciocaixa.fxml"));
         Parent root = fxmlLoader.load();
         cena = new Scene(root);
         estagio.setTitle("Escola de Jovens Programadores");
