@@ -1,10 +1,12 @@
 package DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.conexao.bancoController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +21,8 @@ import javafx.stage.Stage;
 public class CadastroClienteController implements Initializable{
 
     private String[] tipoconta = {"Conta Corrente","Conta Poupança"};
+    Cliente novoCliente = new Cliente();
+    Conta contaNova = new Conta();
     
     @FXML
     private ImageView imgNovoCliente;
@@ -55,44 +59,59 @@ public class CadastroClienteController implements Initializable{
     }
 
     @FXML
-    void Cadastrar(ActionEvent event) {
+    void Cadastrar(ActionEvent event) 
+    {
         bttCadastrar.setOnAction(ActionEvent -> {
-            checacamposvazios(txtNomeNovoCliente.getText(), txtCPFNovoCliente.getText(),
+            checacampos(txtNomeNovoCliente.getText(), txtCPFNovoCliente.getText(),ChoiceboxTipoConta.getValue(),
                                 txtSaldoInicial.getText(), txtSenhaNovoCliente.getText());
-
+            bancoController bdControl = new bancoController();
+            bdControl.cadastracliente(novoCliente, contaNova);
         });
     }
 
     @FXML
-    void LimparCampos(ActionEvent event) {
+    void LimparCampos(ActionEvent event) 
+    {
         bttLimpar.setOnAction(ActionEvent -> {
             txtNomeNovoCliente.setText("");
             txtCPFNovoCliente.setText("");
             ChoiceboxTipoConta.setValue(tipoconta[0]);
             txtSaldoInicial.setText("");
             txtSenhaNovoCliente.setText("");
-
         });
     }
 
     @FXML
-    void Voltar(ActionEvent event) {
+    void Voltar(ActionEvent event) 
+    {
         MenuView telaanterior = new MenuView();
         try{
             telaanterior.start(new Stage());
             CadastroClienteView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
-    public void checacamposvazios(String campoNome, String campoCPF,
-                                    String campoSaldoInicial,
-                                    String campoSenha)
-                                    {
-                                        if(campoNome.equals("")||campoCPF.equals("")||
-                                            campoSaldoInicial.equals("")||
-                                            campoSenha.equals(""))
-                                            {
-                                                JOptionPane.showMessageDialog(null,"O preenchimento de todos os campos é obrigatório!");
-                                            }
-                                    }
+
+    public void checacampos(String campoNome, String campoCPF, String campoTipoConta ,String campoSaldoInicial, String campoSenha)
+    {
+        if(campoNome.equals("") || campoCPF.equals("") || campoSaldoInicial.equals("") || campoSenha.equals(""))
+        {
+            JOptionPane.showMessageDialog(null,"O preenchimento de todos os campos é obrigatório!");
+        }else if(campoCPF.length() != 11)
+        {
+            JOptionPane.showMessageDialog(null,"O campo CPF deve possuir 11 caracteres numéricos!");
+        }
+        else
+        {
+            Random rand = new Random();
+            novoCliente.setNomeCliente(campoNome);
+            novoCliente.setCpfCliente(campoCPF);
+            contaNova.setSaldo(Double.parseDouble(campoSaldoInicial));
+            contaNova.setSenha(campoSenha);
+            if(campoTipoConta.equals("Conta Poupança"))
+            {contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));}
+            else
+            {contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));}
+        }
+    }
     
 }

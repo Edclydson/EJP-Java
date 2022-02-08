@@ -3,6 +3,8 @@ package DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,7 +36,9 @@ public class CadastroContaController implements Initializable {
 
     @FXML
     void Cadastrar(ActionEvent event) {
-
+        bttCadastrar.setOnAction(ActionEvent -> {
+            checacamposvazios(txtCPFNovoCliente.getText(), txtSaldoInicial.getText(), txtSenhaNovoCliente.getText());
+        });
     }
 
     @FXML
@@ -71,5 +75,12 @@ public class CadastroContaController implements Initializable {
                 txtSaldoInicial.setDisable(false);} });
     }
 
+    public void checacamposvazios(String campoCPF, String campoSaldoInicial,String campoSenha)
+    {
+        if(campoCPF.equals("") || campoSaldoInicial.equals("")|| campoSenha.equals(""))
+        {
+            JOptionPane.showMessageDialog(null,"O preenchimento de todos os campos é obrigatório!");
+        }
+    }
     
 }
