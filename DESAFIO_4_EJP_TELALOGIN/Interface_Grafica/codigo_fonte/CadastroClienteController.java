@@ -1,12 +1,8 @@
-package DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte;
 
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
-
 import javax.swing.JOptionPane;
-
-import DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.conexao.bancoController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,6 +13,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+
 
 public class CadastroClienteController implements Initializable{
 

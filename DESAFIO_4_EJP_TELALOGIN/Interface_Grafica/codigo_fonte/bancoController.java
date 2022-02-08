@@ -1,12 +1,10 @@
-package DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.conexao;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javax.swing.JOptionPane;
 
-import DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.Cliente;
-import DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.Conta;
 
 public class bancoController {
 /**
