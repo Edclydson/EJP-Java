@@ -13,7 +13,7 @@ public class mainView extends Application{
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/DESAFIO_5_EJP_JOINAPPS/telas/main.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("DESAFIO_5_EJP_JOINAPPS/telas/main.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Escola de Jovens Programadores");
