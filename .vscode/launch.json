@@ -5,13 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         
+        
         {
             "type": "java",
             "name": "Launch MenuView",
             "request": "launch",
             "mainClass": "MenuView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -19,7 +20,7 @@
             "request": "launch",
             "mainClass": "LoginView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -27,7 +28,7 @@
             "request": "launch",
             "mainClass": "mainView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -35,7 +36,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_5_EJP_JOINAPPS.codigo_fonte.mainView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -43,7 +44,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.CadastroContaView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -51,7 +52,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.MenuView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -59,7 +60,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.CadastroClienteView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -67,7 +68,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.LoginView",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -88,7 +89,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.CaixaEletronico",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -96,7 +97,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.mainCaixaEletronico",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
@@ -110,14 +111,14 @@
             "name": "Launch lercartao",
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.lercartao",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",
             "name": "Launch operacoes",
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.operacoes",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         }
     ],
 }
