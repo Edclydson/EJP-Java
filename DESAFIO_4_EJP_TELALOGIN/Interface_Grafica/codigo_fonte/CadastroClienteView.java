@@ -15,7 +15,7 @@ public class CadastroClienteView extends Application
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/DESAFIO_4_EJP_TELALOGIN/Interface_Grafica/telas/telacadastrocliente.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("telacadastrocliente.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Cadastro Cliente - Banco EJP");

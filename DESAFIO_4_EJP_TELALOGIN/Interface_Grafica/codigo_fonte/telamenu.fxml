@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
@@ -54,7 +54,7 @@
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../imagens/logout.png" />
+                                    <Image url="@imagens/logout.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -67,7 +67,7 @@
                            <graphic>
                               <ImageView fx:id="imgNovoCliente" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../imagens/new_user.png" />
+                                    <Image url="@imagens/new_user.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -76,7 +76,7 @@
                            <graphic>
                               <ImageView fx:id="imgNovaConta" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../imagens/new_account.png" />
+                                    <Image url="@imagens/new_account.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -90,9 +90,9 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="155.0" fitWidth="163.0" layoutX="243.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgbanco" fitHeight="155.0" fitWidth="163.0" layoutX="243.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../imagens/bank.png" />
+                  <Image url="@imagens/bank.png" />
                </image>
             </ImageView>
          </children>

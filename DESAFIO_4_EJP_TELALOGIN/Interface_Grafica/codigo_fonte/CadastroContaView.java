@@ -10,12 +10,12 @@ public class CadastroContaView extends Application {
     private static Stage stage;
     public static void main(String[] args)
     {launch(args);}
-    //TELA LOGIN
+    //TELA CADASTRO CONTA
     @Override
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/DESAFIO_4_EJP_TELALOGIN/Interface_Grafica/telas/telacadastroconta.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("telacadastroconta.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Cadastro Conta - Banco EJP");

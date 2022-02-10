@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +13,7 @@ public class MenuView extends Application {
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/DESAFIO_4_EJP_TELALOGIN/Interface_Grafica/telas/telamenu.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("telamenu.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Banco EJP");
@@ -24,5 +22,4 @@ public class MenuView extends Application {
     }    
     public static Stage getStage()
     {return stage;}    
-    
 }

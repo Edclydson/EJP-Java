@@ -6,10 +6,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MenuController {
 
+    @FXML
+    private ImageView imgbanco;
+    
     @FXML
     private Label LabelEJP;
     

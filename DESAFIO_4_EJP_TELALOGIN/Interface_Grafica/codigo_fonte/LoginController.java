@@ -1,18 +1,21 @@
 
+import javax.swing.JOptionPane;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
-import javax.swing.JOptionPane;
-
-import javafx.event.ActionEvent;
 
 public class LoginController {
 
     @FXML
     private Button bttEntrar;
+
+    @FXML
+    private ImageView imglogin;
 
     @FXML
     private TextField txtLogn;

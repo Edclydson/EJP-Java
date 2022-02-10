@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +14,7 @@ public class LoginView extends Application
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/DESAFIO_4_EJP_TELALOGIN/Interface_Grafica/telas/telalogin.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("telalogin.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Escola de Jovens Programadores");

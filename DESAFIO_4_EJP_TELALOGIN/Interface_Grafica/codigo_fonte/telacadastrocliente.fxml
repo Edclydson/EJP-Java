@@ -41,20 +41,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.CadastroContaController">
-   <children>
-      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="406.0" prefWidth="640.0">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CadastroClienteController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
             <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="218.0" layoutY="151.0" text="B a n c o  E J P" textFill="#0000002a">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="labelNovaConta" layoutX="263.0" layoutY="14.0" text="Nova Conta">
+            <Label layoutX="263.0" layoutY="14.0" text="Novo Cliente">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <Label fx:id="labelNomeCompleto" layoutX="48.0" layoutY="64.0" text="Nome Completo:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNomeNovoCliente" layoutX="163.0" layoutY="62.0" prefHeight="25.0" prefWidth="439.0" />
             <Label fx:id="labelCPF" layoutX="127.0" layoutY="104.0" text="CPF:">
                <font>
                   <Font size="14.0" />
@@ -73,7 +79,7 @@
                </font>
             </Label>
             <TextField fx:id="txtSaldoInicial" layoutX="163.0" layoutY="192.0" prefHeight="25.0" prefWidth="439.0" promptText="Deposito Inicial Recomendado R$ 300" />
-            <Label fx:id="labelSenhaNovaConta" layoutX="112.0" layoutY="240.0" text="Senha:">
+            <Label fx:id="labelSenhaNovoCliente" layoutX="112.0" layoutY="240.0" text="Senha:">
                <font>
                   <Font size="14.0" />
                </font>
@@ -83,6 +89,6 @@
             <Button fx:id="bttLimpar" layoutX="370.0" layoutY="321.0" mnemonicParsing="false" onAction="#LimparCampos" prefHeight="35.0" prefWidth="90.0" text="Limpar" />
             <Button fx:id="bttVoltar" layoutX="242.0" layoutY="321.0" mnemonicParsing="false" onAction="#Voltar" prefHeight="35.0" prefWidth="90.0" text="Voltar" />
          </children>
-      </AnchorPane>
-   </children>
+    </AnchorPane>
+  </children>
 </VBox>
