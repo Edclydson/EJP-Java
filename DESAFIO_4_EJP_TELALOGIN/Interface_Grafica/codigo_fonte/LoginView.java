@@ -23,6 +23,4 @@ public class LoginView extends Application
     }    
     public static Stage getStage()
     {return stage;}    
-    
-    
 }
