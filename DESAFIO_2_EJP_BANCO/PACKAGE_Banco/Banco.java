@@ -1,4 +1,4 @@
-package DESAFIO_2_EJP_BANCO.PACKAGE_Banco;
+package PACKAGE_Banco;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +6,6 @@ import java.util.Map;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
-
-import DESAFIO_2_EJP_BANCO.CaixaEletronico;
 
 public class Banco 
 {   

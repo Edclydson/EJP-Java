@@ -1,4 +1,4 @@
-package DESAFIO_2_EJP_BANCO.PACKAGE_Banco;
+package PACKAGE_Banco;
 
 import javax.swing.JOptionPane;
 

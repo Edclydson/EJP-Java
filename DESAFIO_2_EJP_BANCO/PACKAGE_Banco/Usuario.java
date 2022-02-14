@@ -1,4 +1,4 @@
-package DESAFIO_2_EJP_BANCO.PACKAGE_Banco;
+package PACKAGE_Banco;
 
 public class Usuario 
 {
@@ -23,7 +23,5 @@ public class Usuario
     }
     public static void setId_usuario(int id_usuario) {
         Usuario.id_usuario = id_usuario;
-    }
-
-    
+    }    
 }

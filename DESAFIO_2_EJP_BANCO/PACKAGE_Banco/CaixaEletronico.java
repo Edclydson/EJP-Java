@@ -1,9 +1,5 @@
-package DESAFIO_2_EJP_BANCO;
-
+package PACKAGE_Banco;
 import javax.swing.JOptionPane;
-
-import DESAFIO_2_EJP_BANCO.PACKAGE_Banco.Banco;
-import DESAFIO_2_EJP_BANCO.PACKAGE_Banco.Conta;
 
 public class CaixaEletronico
 {
