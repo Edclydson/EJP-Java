@@ -9,7 +9,7 @@ public class MenuGerenteView extends Application {
     private static Stage stage;
     public static void main(String[] args)
     {launch(args);}
-    //TELA MENU
+    //TELA MENU GERENTE
     @Override
     public void start(Stage estagio) throws Exception
     {

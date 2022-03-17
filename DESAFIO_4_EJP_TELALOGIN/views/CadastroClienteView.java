@@ -11,7 +11,7 @@ public class CadastroClienteView extends Application
     private static Stage stage;
     public static void main(String[] args)
     {launch(args);}
-    //TELA LOGIN
+    //TELA CADASTRO CLIENTE
     @Override
     public void start(Stage estagio) throws Exception
     {

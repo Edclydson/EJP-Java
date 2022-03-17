@@ -13,11 +13,10 @@ import views.MenuFGTSView;
 import views.MenuFaltaView;
 import views.MenuHoraExtraView;
 import views.MenuInsalubridadeView;
-import views.MenuRecrutadorView;
 import views.MenuSalarioFamiliaView;
 import views.MenuValeTransporteView;
 
-public class MenuRecrutadorController {
+public class SalarioFamiliaController {
 
     @FXML
     private Menu AbaSistema;
@@ -32,16 +31,34 @@ public class MenuRecrutadorController {
     private VBox Janela;
 
     @FXML
-    private Label LabelEJP;
+    private Label LabelEJP1;
 
     @FXML
     private MenuItem Sair;
 
     @FXML
-    private ImageView imgNovoColaborador,imgbanco;
+    private ImageView imgNovoColaborador;
 
     @FXML
-    private MenuItem mnFGTS,mnFalta,mnHoraExtra,mnInsalubridade,mnValeTransporte,mnSalarioFamilia;
+    private Label labelNovaConta;
+
+    @FXML
+    private MenuItem mnFGTS;
+
+    @FXML
+    private MenuItem mnFalta;
+
+    @FXML
+    private MenuItem mnHoraExtra;
+
+    @FXML
+    private MenuItem mnInsalubridade;
+
+    @FXML
+    private MenuItem mnSalarioFamilia;
+
+    @FXML
+    private MenuItem mnValeTransporte;
 
     @FXML
     void AbrirAbaSistema(ActionEvent event) {
@@ -58,7 +75,7 @@ public class MenuRecrutadorController {
         MenuFGTSView telaseguinte = new MenuFGTSView();
         try{
             telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
+            MenuSalarioFamiliaView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -67,7 +84,7 @@ public class MenuRecrutadorController {
         MenuFaltaView telaseguinte = new MenuFaltaView();
         try{
             telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
+            MenuSalarioFamiliaView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -76,7 +93,7 @@ public class MenuRecrutadorController {
         MenuHoraExtraView telaseguinte = new MenuHoraExtraView();
         try{
             telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
+            MenuSalarioFamiliaView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -85,25 +102,19 @@ public class MenuRecrutadorController {
         MenuInsalubridadeView telaseguinte = new MenuInsalubridadeView();
         try{
             telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
+            MenuSalarioFamiliaView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
     @FXML
-    void CalcularSalarioFamilia(ActionEvent event) {
-        MenuSalarioFamiliaView telaseguinte = new MenuSalarioFamiliaView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
-    }
+    void CalcularSalarioFamilia(ActionEvent event) {}
 
     @FXML
     void CalcularVT(ActionEvent event) {
         MenuValeTransporteView telaseguinte = new MenuValeTransporteView();
         try{
             telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
+            MenuSalarioFamiliaView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 

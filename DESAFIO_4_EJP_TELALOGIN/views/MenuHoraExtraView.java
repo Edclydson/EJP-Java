@@ -5,16 +5,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MenuRecrutadorView extends Application {
+public class MenuHoraExtraView extends Application {
     private static Stage stage;
     public static void main(String[] args)
     {launch(args);}
-    //TELA MENU RH
+    //TELA CALCULO HORA EXTRA
     @Override
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("..\\modelos\\telamenurecrutador.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("..\\modelos\\telahoraextra.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Banco EJP");

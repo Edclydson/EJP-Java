@@ -36,16 +36,33 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="Janela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuRecrutadorController">
+<VBox fx:id="Janela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SalarioFamiliaController">
   <children>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
+            <ImageView fitHeight="3.0" fitWidth="600.0" layoutX="690.0" layoutY="142.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../imagens/split.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LabelEJP1" alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="127.0" prefHeight="2.0" prefWidth="431.0" text="B a n c o  E J P" textFill="#00000054">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNovaConta" layoutX="788.0" layoutY="67.0" text="S a l á r i o   F a m í l i a" textAlignment="RIGHT">
+               <font>
+                  <Font name="Noto Sans Regular" size="48.0" />
+               </font>
+            </Label>
+            <Separator disable="true" layoutX="550.0" layoutY="150.0" prefWidth="650.0" />
             <MenuBar fx:id="BarraMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1366.0">
               <menus>
                 <Menu fx:id="AbaSistema" mnemonicParsing="false" onAction="#AbrirAbaSistema" text="Sistema">
@@ -129,16 +146,6 @@
                   </Menu>
               </menus>
             </MenuBar>
-            <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="569.0" layoutY="325.0" text="B a n c o  E J P" textFill="#0000005e">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="imgbanco" fitHeight="180.0" fitWidth="250.0" layoutX="593.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../imagens/bank.png" />
-               </image>
-            </ImageView>
             <Label layoutX="1229.0" layoutY="3.0" text="Olá, Recrutador!" wrapText="true">
                <font>
                   <Font size="18.0" />

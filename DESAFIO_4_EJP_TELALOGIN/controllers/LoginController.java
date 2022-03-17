@@ -15,6 +15,7 @@ import src.funcionarioDAO;
 import src.loginDTO;
 import views.LoginView;
 import views.MenuGerenteView;
+import views.MenuRecrutadorView;
 
 /**
  * @author:Edclydson Sousa
@@ -40,27 +41,44 @@ public class LoginController {
      */
     @FXML
     void Logar(ActionEvent event) {
+        funcionarioDAO dao = new funcionarioDAO();
+        ResultSet rsDAO;
         try {
             loginDTO dto = new loginDTO();
             dto.setLogin(txtLogn.getText());
             dto.setSenha(txtSenha.getText());
             
-            funcionarioDAO dao = new funcionarioDAO();
-            ResultSet rsDAO = dao.authLogin(dto);
+            if(dto.getLogin().contains("rec")){
+                
+                 rsDAO = dao.authLogin(dto);
+    
+                if(rsDAO.next()) {
+                    MenuRecrutadorView telaseguinte = new MenuRecrutadorView();
+                    try{
+                        telaseguinte.start(new Stage());
+                        LoginView.getStage().close();
+                    }
+                    catch(Exception e){e.printStackTrace();}
+                } 
+            }
 
-            if(rsDAO.next()) {
-                MenuGerenteView telaseguinte = new MenuGerenteView();
-                //dao.nomeFuncionario(dto);
-                try{
-                telaseguinte.start(new Stage());
+            else if(dto.getLogin().contains("ger")){
+                rsDAO = dao.authLogin(dto);
+                if(rsDAO.next()) {
+                    MenuGerenteView telaseguinte = new MenuGerenteView();
+                    try{
+                        telaseguinte.start(new Stage());
+                        LoginView.getStage().close();
+                    }                        
+                        catch(Exception e){e.printStackTrace();}
+                } 
+                else {JOptionPane.showMessageDialog(null,"Usuario e Senha inválidos!");}
+            }
 
-                LoginView.getStage().close();
-                }
-                catch(Exception e){e.printStackTrace();}
-            } 
             else {
                 JOptionPane.showMessageDialog(null,"Usuario e Senha inválidos!");
-            }
+            }    
+            
         } 
         catch (SQLException e) {
             JOptionPane.showMessageDialog(null,"LoginController "+e);
