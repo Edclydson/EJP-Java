@@ -42,11 +42,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
+<VBox fx:id="Janela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <MenuBar fx:id="BarraMenu" prefHeight="25.0" prefWidth="640.0">
+            <MenuBar fx:id="BarraMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1366.0">
               <menus>
                 <Menu fx:id="AbaSistema" mnemonicParsing="false" onAction="#AbrirAbaSistema" text="Sistema">
                      <items>
@@ -85,16 +85,21 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="236.0" text="B a n c o  E J P" textFill="#0000005e">
+            <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="569.0" layoutY="294.0" text="B a n c o  E J P" textFill="#0000005e">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ImageView fx:id="imgbanco" fitHeight="155.0" fitWidth="163.0" layoutX="243.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgbanco" fitHeight="155.0" fitWidth="163.0" layoutX="606.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagens/bank.png" />
                </image>
             </ImageView>
+            <Label layoutX="1247.0" layoutY="3.0" text="Olá, Gerente!" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
     </AnchorPane>
   </children>

@@ -1,3 +1,5 @@
+package views;
+
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -5,20 +7,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class CadastroClienteView extends Application
-{
+public class CadastroContaView extends Application {
     private static Stage stage;
     public static void main(String[] args)
     {launch(args);}
-    //TELA LOGIN
+    //TELA CADASTRO CONTA
     @Override
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("telacadastrocliente.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("..\\modelos\\telacadastroconta.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Cadastro Cliente - Banco EJP");
+        estagio.setTitle("Cadastro Conta - Banco EJP");
         estagio.setScene(cena);
         estagio.show();
     }    

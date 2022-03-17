@@ -1,6 +1,9 @@
+package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import views.CadastroContaView;
+import views.MenuGerenteView;
 
 public class CadastroContaController implements Initializable {
 
@@ -50,7 +55,7 @@ public class CadastroContaController implements Initializable {
 
     @FXML
     void Voltar(ActionEvent event) {
-        MenuView telaanterior = new MenuView();
+        MenuGerenteView telaanterior = new MenuGerenteView();
         try{
             telaanterior.start(new Stage());
             CadastroContaView.getStage().close();

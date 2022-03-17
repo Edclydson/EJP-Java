@@ -1,5 +1,4 @@
-
-
+package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -7,15 +6,24 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import views.CadastroClienteView;
+import views.CadastroContaView;
+import views.LoginView;
+import views.MenuGerenteView;
 
-public class MenuController {
+
+public class MenuGerenteController {
 
     @FXML
     private ImageView imgbanco;
     
     @FXML
     private Label LabelEJP;
+
+    @FXML
+    private VBox Janela;
     
     @FXML
     private MenuBar BarraMenu;
@@ -34,10 +42,11 @@ public class MenuController {
 
     @FXML
     void CadastrarCliente(ActionEvent event) {
+
         CadastroClienteView telaseguinte = new CadastroClienteView();
         try{
             telaseguinte.start(new Stage());
-            MenuView.getStage().close();
+            MenuGerenteView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -46,10 +55,9 @@ public class MenuController {
         CadastroContaView telaseguinte = new CadastroContaView();
         try{
             telaseguinte.start(new Stage());
-            MenuView.getStage().close();
+            MenuGerenteView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
-
 
     @FXML
     void AbrirAbaSistema(ActionEvent event){}
@@ -59,7 +67,7 @@ public class MenuController {
         LoginView telaanterior = new LoginView();
         try{
             telaanterior.start(new Stage());
-            MenuView.getStage().close();
+            MenuGerenteView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 }

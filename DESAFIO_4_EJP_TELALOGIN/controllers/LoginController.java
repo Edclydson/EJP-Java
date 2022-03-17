@@ -1,6 +1,9 @@
+package controllers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +11,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import src.funcionarioDAO;
+import src.loginDTO;
+import views.LoginView;
+import views.MenuGerenteView;
 
 /**
  * @author:Edclydson Sousa
@@ -42,9 +49,11 @@ public class LoginController {
             ResultSet rsDAO = dao.authLogin(dto);
 
             if(rsDAO.next()) {
-                MenuView telaseguinte = new MenuView();
+                MenuGerenteView telaseguinte = new MenuGerenteView();
+                //dao.nomeFuncionario(dto);
                 try{
                 telaseguinte.start(new Stage());
+
                 LoginView.getStage().close();
                 }
                 catch(Exception e){e.printStackTrace();}
