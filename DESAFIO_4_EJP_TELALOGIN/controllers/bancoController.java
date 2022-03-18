@@ -141,7 +141,7 @@ public class bancoController {
      * CONSULTA SIMPLES REALIZADA PELO GERENTE
      */
     public void consultaCadastroCPF(String cpf, String nome){
-        String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente=? and nome=?;";
+        String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente=? AND nome=?;";
         ResultSet rsDAO;
         conn = new conexaodb().conecta_banco();
         try{

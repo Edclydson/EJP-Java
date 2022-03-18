@@ -21,7 +21,7 @@ public class funcionarioDAO {
     public ResultSet authLogin(loginDTO dto){
         conn = new conexaodb().conecta_banco();
         try {
-            String sql = "SELECT user_funcionario,password_funcionario from funcionario_tb where user_funcionario = ? and password_funcionario = ?;";
+            String sql = "SELECT user_funcionario,password_funcionario FROM funcionario_tb WHERE user_funcionario = ? AND password_funcionario = ?;";
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, dto.getLogin());
             pstm.setString(2, dto.getSenha());
