@@ -17,7 +17,7 @@ public class MenuFaltaView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telafalta.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Banco EJP");
+        estagio.setTitle("Calcular Falta - Banco EJP");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

@@ -1,12 +1,13 @@
 package DESAFIO_4_EJP_TELALOGIN.controllers;
-import DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView;
-import DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView;
-
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import DESAFIO_4_EJP_TELALOGIN.src.Conta;
+import DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +21,8 @@ import javafx.stage.Stage;
 public class CadastroContaController implements Initializable {
 
     private String[] tipoconta = {"Conta Corrente","Conta Poupança"};
+    Conta abrirConta = new Conta();
+    bancoController dbcontroller = new bancoController();
     @FXML
     private ChoiceBox<String> ChoiceboxTipoConta;
 
@@ -39,7 +42,7 @@ public class CadastroContaController implements Initializable {
     @FXML
     void Cadastrar(ActionEvent event) {
         bttCadastrar.setOnAction(ActionEvent -> {
-            checacamposvazios(txtCPFNovoCliente.getText(), txtSaldoInicial.getText(), txtSenhaNovoCliente.getText());
+            checacamposvazios(txtCPFNovoCliente.getText(), txtSaldoInicial.getText(), ChoiceboxTipoConta.getValue(), txtSenhaNovoCliente.getText());
         });
     }
 
@@ -50,7 +53,6 @@ public class CadastroContaController implements Initializable {
             ChoiceboxTipoConta.setValue(tipoconta[0]);
             txtSaldoInicial.setText("");
             txtSenhaNovoCliente.setText("");
-
         });
     }
 
@@ -60,7 +62,8 @@ public class CadastroContaController implements Initializable {
         try{
             telaanterior.start(new Stage());
             CadastroContaView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @Override
@@ -68,20 +71,46 @@ public class CadastroContaController implements Initializable {
         ChoiceboxTipoConta.setValue(tipoconta[0]);
         ChoiceboxTipoConta.getItems().addAll(tipoconta);
         ChoiceboxTipoConta.setOnAction(ActionEvent -> {
-            if(ChoiceboxTipoConta.getValue().equals("Conta Poupança"))
-            {
+            if(ChoiceboxTipoConta.getValue().equals("Conta Poupança")){
                 txtSaldoInicial.setText("R$0.0");
-                txtSaldoInicial.setDisable(true);}
+                txtSaldoInicial.setDisable(true);
+            }
             else{
                 txtSaldoInicial.setText("");
-                txtSaldoInicial.setDisable(false);} });
+                txtSaldoInicial.setDisable(false);
+            } 
+        });
     }
 
-    public void checacamposvazios(String campoCPF, String campoSaldoInicial,String campoSenha)
+    /**
+     * 
+     * @param campoCPF
+     * @param campoSaldoInicial
+     * @param campoTipoConta
+     * @param campoSenha
+     * 
+     * CAMPOS DA TELA COM O QUE O USUARIO DIGITAR, VERIFICANDO SE NÂO TEM CAMPO VAZIO
+     * CASO NÃO TENHA REALIZA A ATRIBUIÇÂO DOS VALORES AOS PARAMETROS DA CLASSE CONTA
+     */
+    public void checacamposvazios(String campoCPF, String campoSaldoInicial,String campoTipoConta ,String campoSenha)
     {
-        if(campoCPF.equals("") || campoSaldoInicial.equals("")|| campoSenha.equals(""))
-        {
+        if(campoCPF.equals("") || campoSaldoInicial.equals("")|| campoSenha.equals("")){
             JOptionPane.showMessageDialog(null,"O preenchimento de todos os campos é obrigatório!");
+        }
+        else{
+            Random rand = new Random();
+            abrirConta.setSenha(campoSenha);
+            if(campoTipoConta.equals("Conta Poupança")){
+                abrirConta.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));
+                abrirConta.setTipoDaConta("CP");
+                abrirConta.setSaldo(0.0);
+            }
+            else{
+                abrirConta.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));
+                abrirConta.setTipoDaConta("CC");
+                abrirConta.setSaldo(Double.parseDouble(campoSaldoInicial));
+            }
+            dbcontroller.consultaCadastroCPF(campoCPF,abrirConta);
         }
     }
     

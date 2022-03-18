@@ -60,7 +60,6 @@ public class LoginController {
                     catch(Exception e){e.printStackTrace();}
                 } 
             }
-
             else if(dto.getLogin().contains("ger")){
                 rsDAO = dao.authLogin(dto);
                 if(rsDAO.next()) {
@@ -69,18 +68,12 @@ public class LoginController {
                         telaseguinte.start(new Stage());
                         LoginView.getStage().close();
                     }                        
-                        catch(Exception e){e.printStackTrace();}
+                    catch(Exception e){e.printStackTrace();}
                 } 
                 else {JOptionPane.showMessageDialog(null,"Usuario e Senha inválidos!");}
             }
-
-            else {
-                JOptionPane.showMessageDialog(null,"Usuario e Senha inválidos!");
-            }    
-            
+            else {JOptionPane.showMessageDialog(null,"Usuario e Senha inválidos!");}    
         } 
-        catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,"LoginController "+e);
-        }
+        catch (SQLException e) {JOptionPane.showMessageDialog(null,"LoginController "+e);}
     }
 }

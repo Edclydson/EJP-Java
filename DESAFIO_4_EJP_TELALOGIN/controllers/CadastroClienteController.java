@@ -49,18 +49,18 @@ public class CadastroClienteController implements Initializable{
     private PasswordField txtSenhaNovoCliente;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) 
-    {
+    public void initialize(URL location, ResourceBundle resources) {
         ChoiceboxTipoConta.setValue(tipoconta[0]);
         ChoiceboxTipoConta.getItems().addAll(tipoconta);
         ChoiceboxTipoConta.setOnAction(ActionEvent -> {
-            if(ChoiceboxTipoConta.getValue().equals("Conta Poupança"))
-            {
+            if(ChoiceboxTipoConta.getValue().equals("Conta Poupança")){
                 txtSaldoInicial.setText("R$0.0");
                 txtSaldoInicial.setDisable(true);}
             else{
                 txtSaldoInicial.setText("");
-                txtSaldoInicial.setDisable(false);} });
+                txtSaldoInicial.setDisable(false);
+            } 
+        });
     }
 
     @FXML
@@ -69,8 +69,6 @@ public class CadastroClienteController implements Initializable{
         bttCadastrar.setOnAction(ActionEvent -> {
             checacampos(txtNomeNovoCliente.getText(), txtCPFNovoCliente.getText(),ChoiceboxTipoConta.getValue(),
                                 txtSaldoInicial.getText(), txtSenhaNovoCliente.getText());
-            bancoController bdControl = new bancoController();
-            bdControl.cadastracliente(novoCliente, contaNova);
         });
     }
 
@@ -93,30 +91,44 @@ public class CadastroClienteController implements Initializable{
         try{
             telaanterior.start(new Stage());
             CadastroClienteView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
-    public void checacampos(String campoNome, String campoCPF, String campoTipoConta ,String campoSaldoInicial, String campoSenha)
-    {
-        if(campoNome.equals("") || campoCPF.equals("") || campoSaldoInicial.equals("") || campoSenha.equals(""))
-        {
+    /**
+     * 
+     * @param campoNome
+     * @param campoCPF
+     * @param campoTipoConta
+     * @param campoSaldoInicial
+     * @param campoSenha
+     * 
+     * CHECA SE OS CAMPOS DO FORMULARIO PARA CADASTRO DE UM NOVO CLIENTE E CONTA ESTÃO VAZIOS E PREENCHIDOS DE FORMA CORRETA
+     * SE HOUVER CAMPOS VAZIOS OU CAMPO DO CPF COM MAIS DE 11 DIGITOS NÃO AVANÇA, CASO CONTRARIO PROSSEGUE COM O REGISTRO
+     */
+    public void checacampos(String campoNome, String campoCPF, String campoTipoConta ,String campoSaldoInicial, String campoSenha){
+        if(campoNome.equals("") || campoCPF.equals("") || campoSaldoInicial.equals("") || campoSenha.equals("")){
             JOptionPane.showMessageDialog(null,"O preenchimento de todos os campos é obrigatório!");
-        }else if(campoCPF.length() != 11)
-        {
+        }
+        else if(campoCPF.length() != 11){
             JOptionPane.showMessageDialog(null,"O campo CPF deve possuir 11 caracteres numéricos!");
         }
-        else
-        {
+        else{
             Random rand = new Random();
             novoCliente.setNomeCliente(campoNome);
             novoCliente.setCpfCliente(campoCPF);
             contaNova.setSaldo(Double.parseDouble(campoSaldoInicial));
             contaNova.setSenha(campoSenha);
-            if(campoTipoConta.equals("Conta Poupança"))
-            {contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));}
-            else
-            {contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));}
+            if(campoTipoConta.equals("Conta Poupança")){
+                contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));
+                contaNova.setTipoDaConta("CP");
+            }
+            else{
+                contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));
+                contaNova.setTipoDaConta("CC");
+            }
+            bancoController bdControl = new bancoController();
+            bdControl.cadastracliente(novoCliente, contaNova);
         }
     }
-    
 }

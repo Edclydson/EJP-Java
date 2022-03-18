@@ -6,6 +6,54 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MenuInsalubridadeView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuInsalubridadeView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuHoraExtraView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuHoraExtraView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuGerenteView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuFGTSView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuFGTSView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuFaltaView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuFaltaView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroClienteView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.CadastroClienteView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
             "name": "Launch LoginView",
             "request": "launch",
             "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.LoginView",
@@ -24,7 +72,7 @@
             "type": "java",
             "name": "Launch CadastroContaView",
             "request": "launch",
-            "mainClass": "CadastroContaView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -32,7 +80,7 @@
             "type": "java",
             "name": "Launch CadastroClienteView",
             "request": "launch",
-            "mainClass": "CadastroClienteView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.CadastroClienteView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -40,7 +88,7 @@
             "type": "java",
             "name": "Launch MenuView",
             "request": "launch",
-            "mainClass": "MenuView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -48,7 +96,7 @@
             "type": "java",
             "name": "Launch LoginView",
             "request": "launch",
-            "mainClass": "LoginView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.LoginView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -72,7 +120,7 @@
             "type": "java",
             "name": "Launch CadastroContaView",
             "request": "launch",
-            "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.CadastroContaView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -80,7 +128,7 @@
             "type": "java",
             "name": "Launch MenuView",
             "request": "launch",
-            "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.MenuView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -88,7 +136,7 @@
             "type": "java",
             "name": "Launch CadastroClienteView",
             "request": "launch",
-            "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.CadastroClienteView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.CadastroClienteView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
@@ -96,7 +144,7 @@
             "type": "java",
             "name": "Launch LoginView",
             "request": "launch",
-            "mainClass": "DESAFIO_4_EJP_TELALOGIN.Interface_Grafica.codigo_fonte.LoginView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.LoginView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },

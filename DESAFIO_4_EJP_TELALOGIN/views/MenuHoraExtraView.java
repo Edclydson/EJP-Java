@@ -17,7 +17,7 @@ public class MenuHoraExtraView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telahoraextra.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Banco EJP");
+        estagio.setTitle("Calcular Hora Extra - Banco EJP");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();
