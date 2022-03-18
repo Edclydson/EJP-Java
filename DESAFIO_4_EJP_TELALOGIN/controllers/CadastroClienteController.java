@@ -1,5 +1,9 @@
-package controllers;
+package DESAFIO_4_EJP_TELALOGIN.controllers;
 
+import DESAFIO_4_EJP_TELALOGIN.src.Cliente;
+import DESAFIO_4_EJP_TELALOGIN.src.Conta;
+import DESAFIO_4_EJP_TELALOGIN.views.CadastroClienteView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -16,10 +20,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import src.Cliente;
-import src.Conta;
-import views.CadastroClienteView;
-import views.MenuGerenteView;
 
 
 

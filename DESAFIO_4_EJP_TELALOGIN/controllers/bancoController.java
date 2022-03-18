@@ -1,12 +1,12 @@
-package controllers;
+package DESAFIO_4_EJP_TELALOGIN.controllers;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javax.swing.JOptionPane;
 
-import src.Cliente;
-import src.Conta;
-import src.conexaodb;
+import DESAFIO_4_EJP_TELALOGIN.src.Cliente;
+import DESAFIO_4_EJP_TELALOGIN.src.Conta;
+import DESAFIO_4_EJP_TELALOGIN.src.conexaodb;
 
 
 /**

@@ -1,4 +1,4 @@
-package controllers;
+package DESAFIO_4_EJP_TELALOGIN.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,10 +8,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import views.CadastroClienteView;
-import views.CadastroContaView;
-import views.LoginView;
-import views.MenuGerenteView;
+import DESAFIO_4_EJP_TELALOGIN.views.*;
 
 
 public class MenuGerenteController {

@@ -1,4 +1,7 @@
-package controllers;
+package DESAFIO_4_EJP_TELALOGIN.controllers;
+import DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,8 +16,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import views.CadastroContaView;
-import views.MenuGerenteView;
 
 public class CadastroContaController implements Initializable {
 

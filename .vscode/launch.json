@@ -8,7 +8,15 @@
             "type": "java",
             "name": "Launch LoginView",
             "request": "launch",
-            "mainClass": "views.LoginView",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.LoginView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch LoginView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.LoginView",
             "projectName": "EJP-Java_2b9614a4",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },

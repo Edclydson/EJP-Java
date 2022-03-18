@@ -1,4 +1,4 @@
-package controllers;
+package DESAFIO_4_EJP_TELALOGIN.controllers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -11,11 +11,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import src.funcionarioDAO;
-import src.loginDTO;
-import views.LoginView;
-import views.MenuGerenteView;
-import views.MenuRecrutadorView;
+import DESAFIO_4_EJP_TELALOGIN.src.funcionarioDAO;
+import DESAFIO_4_EJP_TELALOGIN.src.loginDTO;
+import DESAFIO_4_EJP_TELALOGIN.views.*;
+
 
 /**
  * @author:Edclydson Sousa

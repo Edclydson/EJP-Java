@@ -1,4 +1,4 @@
-package views;
+package DESAFIO_4_EJP_TELALOGIN.views;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +14,7 @@ public class MenuGerenteView extends Application {
     public void start(Stage estagio) throws Exception
     {
         stage = estagio;
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("..\\modelos\\telamenugerente.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telamenugerente.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
         estagio.setTitle("Banco EJP");
