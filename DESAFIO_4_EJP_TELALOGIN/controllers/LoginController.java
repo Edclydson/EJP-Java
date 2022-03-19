@@ -58,7 +58,8 @@ public class LoginController {
                         LoginView.getStage().close();
                     }
                     catch(Exception e){e.printStackTrace();}
-                } 
+                }
+                else {JOptionPane.showMessageDialog(null,"Usuario e Senha inválidos!");}
             }
             else if(dto.getLogin().contains("ger")){
                 rsDAO = dao.authLogin(dto);

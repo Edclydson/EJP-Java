@@ -14,13 +14,19 @@ import DESAFIO_4_EJP_TELALOGIN.views.*;
 public class MenuRecrutadorController {
 
     @FXML
+    private MenuBar BarraMenu;
+    
+    @FXML
     private Menu AbaSistema;
 
     @FXML
-    private MenuBar BarraMenu;
+    private MenuItem mnBuscarColaborador,mnCadastrarNovoColaborador;
 
     @FXML
-    private MenuItem CadastrarNovoColaborador;
+    private MenuItem mnFGTS,mnFalta,mnHoraExtra,mnInsalubridade,mnValeTransporte,mnSalarioFamilia;
+    
+    @FXML
+    private MenuItem Sair;
 
     @FXML
     private VBox Janela;
@@ -29,17 +35,20 @@ public class MenuRecrutadorController {
     private Label LabelEJP;
 
     @FXML
-    private MenuItem Sair;
-
-    @FXML
     private ImageView imgNovoColaborador,imgbanco;
 
-    @FXML
-    private MenuItem mnFGTS,mnFalta,mnHoraExtra,mnInsalubridade,mnValeTransporte,mnSalarioFamilia;
 
     @FXML
-    void AbrirAbaSistema(ActionEvent event) {
+    void AbrirAbaSistema(ActionEvent event) {}
 
+    @FXML
+    void BuscarColaborador(ActionEvent event) {
+        BuscarColaboradorView telaseguinte = new BuscarColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuRecrutadorView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML
@@ -47,13 +56,15 @@ public class MenuRecrutadorController {
 
     }
 
+
     @FXML
     void CalcularFGTS(ActionEvent event) {
         MenuFGTSView telaseguinte = new MenuFGTSView();
         try{
             telaseguinte.start(new Stage());
             MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML
@@ -103,7 +114,11 @@ public class MenuRecrutadorController {
 
     @FXML
     void SairMenu(ActionEvent event) {
-
+        LoginView telaanterior = new LoginView();
+        try{
+            telaanterior.start(new Stage());
+            MenuRecrutadorView.getStage().close();
+        }catch(Exception e){e.printStackTrace();}
     }
 
 }

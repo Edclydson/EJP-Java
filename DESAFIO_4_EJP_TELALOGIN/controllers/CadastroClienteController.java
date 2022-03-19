@@ -117,15 +117,17 @@ public class CadastroClienteController implements Initializable{
             Random rand = new Random();
             novoCliente.setNomeCliente(campoNome);
             novoCliente.setCpfCliente(campoCPF);
-            contaNova.setSaldo(Double.parseDouble(campoSaldoInicial));
+            
             contaNova.setSenha(campoSenha);
             if(campoTipoConta.equals("Conta Poupança")){
                 contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));
                 contaNova.setTipoDaConta("CP");
+                contaNova.setSaldo(0.0);
             }
             else{
                 contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));
                 contaNova.setTipoDaConta("CC");
+                contaNova.setSaldo(Double.parseDouble(campoSaldoInicial));
             }
             bancoController bdControl = new bancoController();
             bdControl.cadastracliente(novoCliente, contaNova);

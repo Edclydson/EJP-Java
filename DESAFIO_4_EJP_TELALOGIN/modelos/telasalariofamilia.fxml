@@ -63,11 +63,16 @@
                </font>
             </Label>
             <Separator disable="true" layoutX="550.0" layoutY="150.0" prefWidth="650.0" />
-            <MenuBar fx:id="BarraMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1366.0">
-              <menus>
-                <Menu fx:id="AbaSistema" mnemonicParsing="false" onAction="#AbrirAbaSistema" text="Sistema">
+            <Label layoutX="1229.0" layoutY="3.0" text="Olá, Recrutador!" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <MenuBar fx:id="BarraMenu1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1366.0">
+               <menus>
+                  <Menu fx:id="AbaSistema1" mnemonicParsing="false" onAction="#AbrirAbaSistema" text="Sistema">
                      <items>
-                        <MenuItem fx:id="Sair" mnemonicParsing="false" onAction="#SairMenu" text="Sair">
+                        <MenuItem fx:id="Sair1" mnemonicParsing="false" onAction="#SairMenu" text="Sair">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -77,80 +82,81 @@
                            </graphic>
                         </MenuItem>
                      </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Cadastrar">
-                  <items>
-                    <MenuItem fx:id="CadastrarNovoColaborador" mnemonicParsing="false" onAction="#CadastrarColaborador" text="Novo Colaborador">
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Gerenciar Colaboradores">
+                     <items>
+                        <MenuItem fx:id="mnCadastrarNovoColaborador" mnemonicParsing="false" onAction="#CadastrarColaborador" text="Novo Colaborador">
                            <graphic>
-                              <ImageView fx:id="imgNovoColaborador" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgNovoColaborador1" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/novocolaborador.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </MenuItem>
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Buscar Colaborador" />
+                        <MenuItem fx:id="mnBuscarColaborador" mnemonicParsing="false" onAction="#BuscarColaborador" text="Buscar Colaborador" />
+                     </items>
+                  </Menu>
                   <Menu mnemonicParsing="false" text="Calculadora">
                      <items>
-                        <MenuItem fx:id="mnValeTransporte" mnemonicParsing="false" onAction="#CalcularVT" text="Vale Transporte">
+                        <MenuItem fx:id="mnValeTransporte1" mnemonicParsing="false" onAction="#CalcularVT" text="Vale Transporte">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/valetransporte.png" />
                                  </image>
                               </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnFGTS" mnemonicParsing="false" onAction="#CalcularFGTS" text="FGTS">
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mnFGTS1" mnemonicParsing="false" onAction="#CalcularFGTS" text="FGTS">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/FGTS.png" />
                                  </image>
                               </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnHoraExtra" mnemonicParsing="false" onAction="#CalcularHoraExtra" text="Hora Extra">
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mnHoraExtra1" mnemonicParsing="false" onAction="#CalcularHoraExtra" text="Hora Extra">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/horaextra.png" />
                                  </image>
                               </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnFalta" mnemonicParsing="false" onAction="#CalcularFalta" text="Falta">
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mnFalta1" mnemonicParsing="false" onAction="#CalcularFalta" text="Falta">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/falta.png" />
                                  </image>
                               </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnSalarioFamilia" mnemonicParsing="false" onAction="#CalcularSalarioFamilia" text="Salario Familia">
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mnSalarioFamilia1" mnemonicParsing="false" onAction="#CalcularSalarioFamilia" text="Salario Familia">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/salariofamilia.png" />
                                  </image>
                               </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnInsalubridade" mnemonicParsing="false" onAction="#CalcularInsalubridade" text="Insalubridade">
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mnInsalubridade1" mnemonicParsing="false" onAction="#CalcularInsalubridade" text="Insalubridade">
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imagens/insalubridade.png" />
                                  </image>
                               </ImageView>
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                      </items>
                   </Menu>
-              </menus>
+               </menus>
             </MenuBar>
-            <Label layoutX="1229.0" layoutY="3.0" text="Olá, Recrutador!" wrapText="true">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
          </children>
     </AnchorPane>
   </children>

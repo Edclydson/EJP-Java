@@ -15,50 +15,43 @@ import DESAFIO_4_EJP_TELALOGIN.views.*;
 public class ValeTransporteController {
 
     @FXML
+    private MenuBar BarraMenu;
+    
+    @FXML
     private Menu AbaSistema;
 
     @FXML
-    private MenuBar BarraMenu;
+    private MenuItem mnBuscarColaborador,mnCadastrarNovoColaborador;
 
     @FXML
-    private MenuItem CadastrarNovoColaborador;
+    private MenuItem mnFGTS,mnFalta,mnHoraExtra,mnInsalubridade,mnValeTransporte,mnSalarioFamilia;
+    
+    @FXML
+    private MenuItem Sair;
 
     @FXML
     private VBox Janela;
 
     @FXML
-    private Label LabelEJP1;
+    private Label LabelEJP;
 
     @FXML
-    private MenuItem Sair;
-
-    @FXML
-    private ImageView imgNovoColaborador;
-
-    @FXML
-    private Label labelNovaConta;
-
-    @FXML
-    private MenuItem mnFGTS;
-
-    @FXML
-    private MenuItem mnFalta;
-
-    @FXML
-    private MenuItem mnHoraExtra;
-
-    @FXML
-    private MenuItem mnInsalubridade;
-
-    @FXML
-    private MenuItem mnSalarioFamilia;
-
-    @FXML
-    private MenuItem mnValeTransporte;
+    private ImageView imgNovoColaborador,imgbanco;
+    
 
     @FXML
     void AbrirAbaSistema(ActionEvent event) {
 
+    }
+
+    @FXML
+    void BuscarColaborador(ActionEvent event) {
+        BuscarColaboradorView telaseguinte = new BuscarColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuValeTransporteView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML
@@ -116,6 +109,11 @@ public class ValeTransporteController {
 
     @FXML
     void SairMenu(ActionEvent event) {
+        LoginView telaanterior = new LoginView();
+        try{
+            telaanterior.start(new Stage());
+            MenuValeTransporteView.getStage().close();
+        }catch(Exception e){e.printStackTrace();}
 
     }
 

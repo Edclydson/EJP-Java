@@ -1,5 +1,13 @@
 package DESAFIO_4_EJP_TELALOGIN.controllers;
 
+import DESAFIO_4_EJP_TELALOGIN.views.BuscarColaboradorView;
+import DESAFIO_4_EJP_TELALOGIN.views.LoginView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuFGTSView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuFaltaView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuHoraExtraView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuInsalubridadeView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuSalarioFamiliaView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuValeTransporteView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,9 +17,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import DESAFIO_4_EJP_TELALOGIN.views.*;
 
-public class HoraExtraController {
+public class BuscarColaboradorController {
 
     @FXML
     private MenuBar BarraMenu;
@@ -43,14 +50,7 @@ public class HoraExtraController {
     }
 
     @FXML
-    void BuscarColaborador(ActionEvent event) {
-        BuscarColaboradorView telaseguinte = new BuscarColaboradorView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuHoraExtraView.getStage().close();
-        }
-        catch(Exception e){e.printStackTrace();}
-    }
+    void BuscarColaborador(ActionEvent event) {}
 
     @FXML
     void CadastrarColaborador(ActionEvent event) {
@@ -62,7 +62,7 @@ public class HoraExtraController {
         MenuFGTSView telaseguinte = new MenuFGTSView();
         try{
             telaseguinte.start(new Stage());
-            MenuHoraExtraView.getStage().close();
+            BuscarColaboradorView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -71,19 +71,25 @@ public class HoraExtraController {
         MenuFaltaView telaseguinte = new MenuFaltaView();
         try{
             telaseguinte.start(new Stage());
-            MenuHoraExtraView.getStage().close();
+            BuscarColaboradorView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
     @FXML
-    void CalcularHoraExtra(ActionEvent event) {}
+    void CalcularHoraExtra(ActionEvent event) {
+        MenuHoraExtraView telaseguinte = new MenuHoraExtraView();
+        try{
+            telaseguinte.start(new Stage());
+            BuscarColaboradorView.getStage().close();
+        }catch(Exception e){e.printStackTrace();}
+    }
 
     @FXML
     void CalcularInsalubridade(ActionEvent event) {
         MenuInsalubridadeView telaseguinte = new MenuInsalubridadeView();
         try{
             telaseguinte.start(new Stage());
-            MenuHoraExtraView.getStage().close();
+            BuscarColaboradorView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -92,7 +98,7 @@ public class HoraExtraController {
         MenuSalarioFamiliaView telaseguinte = new MenuSalarioFamiliaView();
         try{
             telaseguinte.start(new Stage());
-            MenuHoraExtraView.getStage().close();
+            BuscarColaboradorView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -101,7 +107,7 @@ public class HoraExtraController {
         MenuValeTransporteView telaseguinte = new MenuValeTransporteView();
         try{
             telaseguinte.start(new Stage());
-            MenuHoraExtraView.getStage().close();
+            BuscarColaboradorView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
     }
 
@@ -110,9 +116,8 @@ public class HoraExtraController {
         LoginView telaanterior = new LoginView();
         try{
             telaanterior.start(new Stage());
-            MenuHoraExtraView.getStage().close();
+            BuscarColaboradorView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
-
     }
 
 }

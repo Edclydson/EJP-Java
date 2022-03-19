@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BuscaColaboradorView extends Application
+public class BuscarColaboradorView extends Application
 {
     private static Stage stage;
     public static void main(String[] args)

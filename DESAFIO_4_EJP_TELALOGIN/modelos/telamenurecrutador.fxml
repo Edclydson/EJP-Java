@@ -61,9 +61,9 @@
                         </MenuItem>
                      </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Cadastrar">
+                <Menu mnemonicParsing="false" text="Gerenciar Colaboradores">
                   <items>
-                    <MenuItem fx:id="CadastrarNovoColaborador" mnemonicParsing="false" onAction="#CadastrarColaborador" text="Novo Colaborador">
+                    <MenuItem fx:id="mnCadastrarNovoColaborador" mnemonicParsing="false" onAction="#CadastrarColaborador" text="Novo Colaborador">
                            <graphic>
                               <ImageView fx:id="imgNovoColaborador" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -72,9 +72,9 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
+                        <MenuItem fx:id="mnBuscarColaborador" mnemonicParsing="false" onAction="#BuscarColaborador" text="Buscar Colaborador" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Buscar Colaborador" />
                   <Menu mnemonicParsing="false" text="Calculadora">
                      <items>
                         <MenuItem fx:id="mnValeTransporte" mnemonicParsing="false" onAction="#CalcularVT" text="Vale Transporte">
