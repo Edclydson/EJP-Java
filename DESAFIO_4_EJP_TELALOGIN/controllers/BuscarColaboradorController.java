@@ -1,5 +1,7 @@
 package DESAFIO_4_EJP_TELALOGIN.controllers;
 
+import javax.swing.JOptionPane;
+
 import DESAFIO_4_EJP_TELALOGIN.views.BuscarColaboradorView;
 import DESAFIO_4_EJP_TELALOGIN.views.LoginView;
 import DESAFIO_4_EJP_TELALOGIN.views.MenuFGTSView;
@@ -10,16 +12,19 @@ import DESAFIO_4_EJP_TELALOGIN.views.MenuSalarioFamiliaView;
 import DESAFIO_4_EJP_TELALOGIN.views.MenuValeTransporteView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class BuscarColaboradorController {
 
+    
     @FXML
     private MenuBar BarraMenu;
     
@@ -39,7 +44,13 @@ public class BuscarColaboradorController {
     private VBox Janela;
 
     @FXML
-    private Label LabelEJP;
+    private Label LabelEJP,lblMatricula;
+
+    @FXML
+    private TextField txtMatriculaColaborador;
+
+    @FXML
+    private Button bttBuscar;
 
     @FXML
     private ImageView imgNovoColaborador,imgbanco;
@@ -47,6 +58,11 @@ public class BuscarColaboradorController {
     @FXML
     void AbrirAbaSistema(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void Buscar(ActionEvent event) {
+        campoVazio(txtMatriculaColaborador.getText().toString());
     }
 
     @FXML
@@ -120,4 +136,12 @@ public class BuscarColaboradorController {
         }catch(Exception e){e.printStackTrace();}
     }
 
+    public void campoVazio(String matricula){
+        if(matricula.equals("") || matricula.equals(null)){
+            JOptionPane.showMessageDialog(null,"Campo da Matricula não pode ficar vazio!");
+        }
+        else{
+
+        }
+    }
 }
