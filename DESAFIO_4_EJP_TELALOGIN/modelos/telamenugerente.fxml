@@ -83,6 +83,41 @@
                         </MenuItem>
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Simular">
+                    <items>
+                        <Menu mnemonicParsing="false" text="Investimento">
+                          <items>
+                            <MenuItem fx:id="SimulaRendaFixa" mnemonicParsing="false" onAction="#simularRendaFixa" text="Renda Fixa" />
+                              <MenuItem fx:id="SimulaFundoImobiliario" mnemonicParsing="false" onAction="#simularFundoImobiliario" text="Fundos Imobiliários" />
+                          </items>
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/investimento.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Menu>
+                      <MenuItem fx:id="SimulaEmprestimo" mnemonicParsing="false" onAction="#simularEmprestimo" text="Empréstimo">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/emprestimo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="SimulaFinanciamento" mnemonicParsing="false" onAction="#simularFinanciamento" text="Financiamento">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/financiamento.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                  </Menu>
               </menus>
             </MenuBar>
             <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="569.0" layoutY="325.0" text="B a n c o  E J P" textFill="#0000005e">

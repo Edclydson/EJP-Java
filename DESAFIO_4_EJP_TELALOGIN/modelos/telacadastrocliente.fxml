@@ -82,7 +82,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <PasswordField fx:id="txtSenhaNovoCliente" layoutX="410.0" layoutY="467.0" prefHeight="30.0" prefWidth="545.0" />
+            <PasswordField fx:id="txtSenhaNovoCliente" layoutX="410.0" layoutY="467.0" prefHeight="30.0" prefWidth="545.0" promptText="Defina uma senha de até 4 digitos." />
             <Button fx:id="bttCadastrar" layoutX="1075.0" layoutY="542.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="35.0" prefWidth="90.0" text="Cadastrar">
                <font>
                   <Font size="14.0" />

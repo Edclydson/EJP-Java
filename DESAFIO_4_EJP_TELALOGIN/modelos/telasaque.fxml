@@ -41,7 +41,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DESAFIO_4_EJP_TELALOGIN.controllers.MenuOperacionalController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DESAFIO_4_EJP_TELALOGIN.controllers.SaqueController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="700.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
       <children>
@@ -78,22 +78,22 @@
                   </LinearGradient>
                </fill>
             </Rectangle>
-            <Button fx:id="btsaque" alignment="BASELINE_RIGHT" layoutY="150.0" mnemonicParsing="false" onAction="#sacar" prefHeight="100.0" prefWidth="500.0" text="S A Q U E ">
+            <Button fx:id="btsaque50" alignment="BASELINE_RIGHT" layoutY="150.0" mnemonicParsing="false" onAction="#sacar50" prefHeight="100.0" prefWidth="500.0" text="R $  5 0 ">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="bttransferencia" alignment="BASELINE_RIGHT" layoutY="450.0" mnemonicParsing="false" onAction="#transferir" prefHeight="100.0" prefWidth="500.0" text="T R A N S F E R Ê N C I A ">
+            <Button fx:id="btsacar100" alignment="BASELINE_RIGHT" layoutY="450.0" mnemonicParsing="false" onAction="#sacar100" prefHeight="100.0" prefWidth="500.0" text="R $  1 0 0 ">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="btdeposito" alignment="BASELINE_LEFT" layoutX="865.0" layoutY="75.0" mnemonicParsing="false" onAction="#depositar" prefHeight="100.0" prefWidth="500.0" text=" D E P Ó S I T O">
+            <Button fx:id="btsacar150" alignment="BASELINE_LEFT" layoutX="865.0" layoutY="75.0" mnemonicParsing="false" onAction="#sacar150" prefHeight="100.0" prefWidth="500.0" text="R $  1 5 0 ">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="btextrato" alignment="BASELINE_LEFT" layoutX="865.0" layoutY="325.0" mnemonicParsing="false" onAction="#verextrato" prefHeight="100.0" prefWidth="500.0" text=" E X T R A T O">
+            <Button fx:id="btsacarOutroValor" alignment="BASELINE_LEFT" layoutX="865.0" layoutY="325.0" mnemonicParsing="false" onAction="#sacarOutroValor" prefHeight="100.0" prefWidth="500.0" text="O U T R O  V A L O R">
                <font>
                   <Font size="24.0" />
                </font>

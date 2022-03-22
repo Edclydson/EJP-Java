@@ -32,10 +32,10 @@ public class MenuGerenteController {
     private MenuItem Sair;
 
     @FXML
-    private MenuItem CadastrarNovoCliente;
+    private MenuItem CadastrarNovoCliente,CadastrarNovaConta;
 
     @FXML
-    private MenuItem CadastrarNovaConta;
+    private MenuItem SimulaEmprestimo,SimulaFinanciamento,SimulaFundoImobiliario,SimulaRendaFixa;
 
     @FXML
     void CadastrarCliente(ActionEvent event) {
@@ -54,6 +54,27 @@ public class MenuGerenteController {
             telaseguinte.start(new Stage());
             MenuGerenteView.getStage().close();
         }catch(Exception e){e.printStackTrace();}
+    }
+
+    
+    @FXML
+    void simularFundoImobiliario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void simularRendaFixa(ActionEvent event) {
+
+    }
+
+    @FXML
+    void simularEmprestimo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void simularFinanciamento(ActionEvent event) {
+
     }
 
     @FXML

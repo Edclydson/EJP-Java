@@ -38,9 +38,7 @@ public class HoraExtraController {
     private ImageView imgNovoColaborador,imgbanco;
 
     @FXML
-    void AbrirAbaSistema(ActionEvent event) {
-
-    }
+    void AbrirAbaSistema(ActionEvent event) {}
 
     @FXML
     void BuscarColaborador(ActionEvent event) {

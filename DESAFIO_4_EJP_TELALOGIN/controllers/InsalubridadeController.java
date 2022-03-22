@@ -39,9 +39,7 @@ public class InsalubridadeController {
     
 
     @FXML
-    void AbrirAbaSistema(ActionEvent event) {
-
-    }
+    void AbrirAbaSistema(ActionEvent event) {}
 
     @FXML
     void BuscarColaborador(ActionEvent event) {

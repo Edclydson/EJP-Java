@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SaqueView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.SaqueView",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConfirmaView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.ConfirmaView",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
             "name": "Launch MenuIniciarAtendimentoOperacionalView",
             "request": "launch",
             "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.MenuIniciarAtendimentoOperacionalView",
