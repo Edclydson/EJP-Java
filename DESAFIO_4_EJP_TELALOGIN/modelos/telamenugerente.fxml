@@ -48,7 +48,7 @@
          <children>
             <MenuBar fx:id="BarraMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1366.0">
               <menus>
-                <Menu fx:id="AbaSistema" mnemonicParsing="false" onAction="#AbrirAbaSistema" text="Sistema">
+                <Menu fx:id="AbaSistema" mnemonicParsing="false" text="Sistema">
                      <items>
                         <MenuItem fx:id="Sair" mnemonicParsing="false" onAction="#SairMenu" text="Sair">
                            <graphic>
@@ -116,6 +116,12 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Gerenciar">
+                    <items>
+                      <MenuItem fx:id="GerenciarClientes" mnemonicParsing="false" onAction="#gerenciarClientes" text="Clientes" />
+                        <MenuItem fx:id="GerenciarContas" mnemonicParsing="false" onAction="#gerenciarContas" text="Contas" />
                     </items>
                   </Menu>
               </menus>

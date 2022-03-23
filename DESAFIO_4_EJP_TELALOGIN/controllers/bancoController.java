@@ -36,12 +36,14 @@ public class bancoController {
      * Classe onde as informações da conta aberta pelo cliente ficam
      */
     public void cadastracliente(Cliente novoCliente, Conta contaNova){
-        String sql = "INSERT INTO cliente_tb (nome,cpf_cliente) VALUES (?,?);";
+        String sql = "INSERT INTO cliente_tb (nome,cpf_cliente,endereco_cliente,telefone_cliente) VALUES (?,?,?,?);";
         conn = new conexaodb().conecta_banco();
         try {
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, novoCliente.getNomeCliente());
             pstm.setString(2, Cliente.getCpfCliente());
+            pstm.setString(3, novoCliente.getEndereço());
+            pstm.setString(4, novoCliente.getTelefone());
             pstm.execute();
             pstm.close();
 

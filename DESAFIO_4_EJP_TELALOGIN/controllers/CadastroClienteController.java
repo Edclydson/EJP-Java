@@ -35,7 +35,8 @@ public class CadastroClienteController implements Initializable{
     @FXML
     private Label LabelEJP,labelCPF, 
                 labelTipoConta, labelSenhaNovoCliente,
-                labelSaldoInicial, labelNomeCompleto;
+                labelSaldoInicial, labelNomeCompleto,labelEndereco,labelTelefone;
+
     @FXML
     private ChoiceBox<String> ChoiceboxTipoConta;
 
@@ -43,7 +44,7 @@ public class CadastroClienteController implements Initializable{
     private Button bttVoltar,bttCadastrar,bttLimpar;
     
     @FXML
-    private TextField txtSaldoInicial,txtCPFNovoCliente,txtNomeNovoCliente;
+    private TextField txtSaldoInicial,txtCPFNovoCliente,txtNomeNovoCliente,txtEnderecoNovoCliente,txtTelefoneNovoCliente;
 
     @FXML
     private PasswordField txtSenhaNovoCliente;
@@ -67,7 +68,7 @@ public class CadastroClienteController implements Initializable{
     void Cadastrar(ActionEvent event) 
     {
         bttCadastrar.setOnAction(ActionEvent -> {
-            checacampos(txtNomeNovoCliente.getText(), txtCPFNovoCliente.getText(),ChoiceboxTipoConta.getValue(),
+            checacampos(txtNomeNovoCliente.getText(), txtCPFNovoCliente.getText(),txtEnderecoNovoCliente.getText(), txtTelefoneNovoCliente.getText(),ChoiceboxTipoConta.getValue(),
                                 txtSaldoInicial.getText(), txtSenhaNovoCliente.getText());
         });
     }
@@ -99,6 +100,8 @@ public class CadastroClienteController implements Initializable{
      * 
      * @param campoNome
      * @param campoCPF
+     * @param campoEndereco
+     * @param campoTelefone
      * @param campoTipoConta
      * @param campoSaldoInicial
      * @param campoSenha
@@ -106,7 +109,7 @@ public class CadastroClienteController implements Initializable{
      * CHECA SE OS CAMPOS DO FORMULARIO PARA CADASTRO DE UM NOVO CLIENTE E CONTA ESTÃO VAZIOS E PREENCHIDOS DE FORMA CORRETA
      * SE HOUVER CAMPOS VAZIOS OU CAMPO DO CPF COM MAIS DE 11 DIGITOS NÃO AVANÇA, CASO CONTRARIO PROSSEGUE COM O REGISTRO
      */
-    public void checacampos(String campoNome, String campoCPF, String campoTipoConta ,String campoSaldoInicial, String campoSenha){
+    public void checacampos(String campoNome, String campoCPF, String campoEndereco, String campoTelefone, String campoTipoConta ,String campoSaldoInicial, String campoSenha){
         if(campoNome.equals("") || campoCPF.equals("") || campoSaldoInicial.equals("") || campoSenha.equals("")){
             JOptionPane.showMessageDialog(null,"O preenchimento de todos os campos é obrigatório!");
         }
@@ -117,6 +120,8 @@ public class CadastroClienteController implements Initializable{
             Random rand = new Random();
             novoCliente.setNomeCliente(campoNome);
             novoCliente.setCpfCliente(campoCPF);
+            novoCliente.setEndereço(campoEndereco);
+            novoCliente.setTelefone(campoTelefone);
             
             contaNova.setSenha(campoSenha);
             if(campoTipoConta.equals("Conta Poupança")){

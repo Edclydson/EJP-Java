@@ -48,6 +48,30 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
+            <TextField fx:id="txtNomeNovoCliente" layoutX="410.0" layoutY="203.0" prefHeight="30.0" prefWidth="545.0" />
+            <TextField fx:id="txtCPFNovoCliente" layoutX="410.0" layoutY="269.0" prefHeight="30.0" prefWidth="200.0" promptText="Somente Números" />
+            <TextField fx:id="txtTelefoneNovoCliente" layoutX="750.0" layoutY="269.0" prefHeight="30.0" prefWidth="200.0" promptText="Somente Números" />
+            <TextField fx:id="txtEnderecoNovoCliente" layoutX="410.0" layoutY="335.0" prefHeight="30.0" prefWidth="545.0" />
+            <ChoiceBox fx:id="ChoiceboxTipoConta" layoutX="410.0" layoutY="401.0" prefHeight="30.0" prefWidth="545.0" />
+            <TextField fx:id="txtSaldoInicial" layoutX="410.0" layoutY="467.0" prefHeight="30.0" prefWidth="545.0" promptText="Deposito Inicial Recomendado R$ 300" />
+            <PasswordField fx:id="txtSenhaNovoCliente" layoutX="410.0" layoutY="533.0" prefHeight="30.0" prefWidth="545.0" promptText="Defina uma senha de até 4 digitos." />
+            <Button fx:id="bttCadastrar" layoutX="1075.0" layoutY="607.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="35.0" prefWidth="90.0" text="Cadastrar">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="bttLimpar" layoutX="950.0" layoutY="607.0" mnemonicParsing="false" onAction="#LimparCampos" prefHeight="35.0" prefWidth="90.0" text="Limpar">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="bttVoltar" layoutX="822.0" layoutY="607.0" mnemonicParsing="false" onAction="#Voltar" prefHeight="35.0" prefWidth="90.0" text="Voltar">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Label fx:id="labelSaldoInicial" layoutX="285.0" layoutY="470.0" text="Saldo Inicial:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <Label layoutX="871.0" layoutY="67.0" text="N o v o   C l i e n t e ">
                <font>
                   <Font size="48.0" />
@@ -58,43 +82,21 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNomeNovoCliente" layoutX="410.0" layoutY="203.0" prefHeight="30.0" prefWidth="545.0" />
             <Label fx:id="labelCPF" layoutX="350.0" layoutY="271.0" text="CPF:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCPFNovoCliente" layoutX="410.0" layoutY="269.0" prefHeight="30.0" prefWidth="200.0" promptText="Somente Números" />
-            <Label fx:id="labelTipoConta" layoutX="269.0" layoutY="340.0" text="Tipo da Conta:">
+            <Label fx:id="labelTipoConta" layoutX="269.0" layoutY="406.0" text="Tipo da Conta:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="ChoiceboxTipoConta" layoutX="410.0" layoutY="335.0" prefHeight="30.0" prefWidth="545.0" />
-            <Label fx:id="labelSaldoInicial" layoutX="285.0" layoutY="404.0" text="Saldo Inicial:">
+            <Label fx:id="labelSenhaNovoCliente" layoutX="330.0" layoutY="535.0" text="Senha:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSaldoInicial" layoutX="410.0" layoutY="401.0" prefHeight="30.0" prefWidth="545.0" promptText="Deposito Inicial Recomendado R$ 300" />
-            <Label fx:id="labelSenhaNovoCliente" layoutX="330.0" layoutY="469.0" text="Senha:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="txtSenhaNovoCliente" layoutX="410.0" layoutY="467.0" prefHeight="30.0" prefWidth="545.0" promptText="Defina uma senha de até 4 digitos." />
-            <Button fx:id="bttCadastrar" layoutX="1075.0" layoutY="542.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="35.0" prefWidth="90.0" text="Cadastrar">
-               <font>
-                  <Font size="14.0" />
-               </font></Button>
-            <Button fx:id="bttLimpar" layoutX="950.0" layoutY="542.0" mnemonicParsing="false" onAction="#LimparCampos" prefHeight="35.0" prefWidth="90.0" text="Limpar">
-               <font>
-                  <Font size="14.0" />
-               </font></Button>
-            <Button fx:id="bttVoltar" layoutX="822.0" layoutY="542.0" mnemonicParsing="false" onAction="#Voltar" prefHeight="35.0" prefWidth="90.0" text="Voltar">
-               <font>
-                  <Font size="14.0" />
-               </font></Button>
             <Label fx:id="LabelEJP1" alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="127.0" prefHeight="2.0" prefWidth="431.0" text="B a n c o  E J P" textFill="#00000054">
                <font>
                   <Font size="14.0" />
@@ -106,6 +108,16 @@
                </image>
             </ImageView>
             <Separator disable="true" layoutX="550.0" layoutY="150.0" prefWidth="650.0" />
+            <Label fx:id="labelEndereco" layoutX="305.0" layoutY="340.0" text="Endereço:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTelefone" layoutX="650.0" layoutY="271.0" text="Telefone:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
     </AnchorPane>
   </children>
