@@ -1,4 +1,9 @@
 package DESAFIO_4_EJP_TELALOGIN.controllers;
+import DESAFIO_4_EJP_TELALOGIN.views.CadastroClienteView;
+import DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView;
+import DESAFIO_4_EJP_TELALOGIN.views.GerenciarClienteView;
+import DESAFIO_4_EJP_TELALOGIN.views.LoginView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,7 +13,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import DESAFIO_4_EJP_TELALOGIN.views.*;
 
 
 public class MenuGerenteController {
@@ -60,7 +64,11 @@ public class MenuGerenteController {
 
     @FXML
     void gerenciarClientes(ActionEvent event) {
-
+        GerenciarClienteView telaseguinte = new GerenciarClienteView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuGerenteView.getStage().close();
+        }catch(Exception e){e.printStackTrace();}
     }
 
     @FXML

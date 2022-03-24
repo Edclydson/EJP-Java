@@ -146,22 +146,78 @@ public class bancoController {
      * @param nome
      * CONSULTA SIMPLES REALIZADA PELO GERENTE
      */
-    public void consultaCadastroCPF(String cpf, String nome){
-        String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente=? AND nome=?;";
+    public boolean consultaGerente(String cpf){
+        String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente = ?;";
         ResultSet rsDAO;
         conn = new conexaodb().conecta_banco();
         try{
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, cpf);
-            pstm.setString(2, nome);
             rsDAO = pstm.executeQuery();
-            if(rsDAO.next()) {JOptionPane.showMessageDialog(null,"Nome e CPF informados constam na base de dados!");}
-            else{
-                //PARA CONSULTA DO GERENTE
+            if(rsDAO.next()) {
+                EmAtendimento.setNomeCliente(rsDAO.getString("nome"));
+                EmAtendimento.setEndereço(rsDAO.getString("endereco_cliente"));
+                EmAtendimento.setTelefone(rsDAO.getString("telefone_cliente"));
+                GerenciarClienteController.nome = EmAtendimento.getNomeCliente();
+                GerenciarClienteController.endereco = EmAtendimento.getEndereço();
+                GerenciarClienteController.telefone = EmAtendimento.getTelefone();
+                return true;
             }
+            else{
+                JOptionPane.showMessageDialog(null,"CPF informado não consta na base de dados!");
+            }
+            pstm.close();
         }
         catch(SQLException erro){JOptionPane.showMessageDialog(null,"bancoController "+ erro);}
+        return false;
     }
+
+    /**
+     * 
+     * @param cpf
+     * @param nome
+     * @param endereco
+     * @param telefone
+     * ATUALIZAÇÃO DE DADOS REALIZADA PELO GERENTE
+     */
+    public void alteraGerente(String cpf,String nome, String endereco, String telefone){
+        String atualizacao = "UPDATE cliente_tb SET nome = ?,endereco_cliente = ?, telefone_cliente = ? WHERE cpf_cliente = ?;";
+        try{
+            pstm = conn.prepareStatement(atualizacao);
+            pstm.setString(1,nome);
+            pstm.setString(2, endereco);
+            pstm.setString(3, telefone);
+            pstm.setString(4, cpf);
+            pstm.execute();
+            pstm.close();
+        }catch(SQLException e){}
+        JOptionPane.showMessageDialog(null,"Cadastro Atualizado!");
+    }
+
+    /**
+     * 
+     * @param cpf
+     * REMOÇAO DO CLIENTE SE NAO HOUVER MAIS CONTAS ABERTAS VINCULADAS AO SEU CPF
+     */
+     public void removeGerente(String cpf){
+        String remocao = "DELETE FROM cliente_tb  WHERE cpf_cliente = ?;";
+        String verificacao = "SELECT * FROM conta_tb WHERE cpf_cliente_titular = ?;";
+        try{
+            pstm = conn.prepareStatement(verificacao);
+            pstm.setString(1,cpf);
+            rsDAO = pstm.executeQuery();
+            if(rsDAO.next()){
+                JOptionPane.showMessageDialog(null,"O cliente não poderá ser excluído sem antes encerrar as contas!");
+            }
+            else{
+                pstm = conn.prepareStatement(remocao);
+                pstm.setString(1,cpf);
+                pstm.execute();
+                JOptionPane.showMessageDialog(null,"Cliente foi removido da base de dados com sucesso!");
+            }
+        }catch(SQLException e){}
+    }
+
 
     /**
      * 
