@@ -34,9 +34,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -49,101 +46,12 @@
   <children>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1366.0" VBox.vgrow="ALWAYS">
          <children>
-            <MenuBar fx:id="BarraMenu1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1366.0">
-               <menus>
-                  <Menu fx:id="AbaSistema1" mnemonicParsing="false" onAction="#AbrirAbaSistema" text="Sistema">
-                     <items>
-                        <MenuItem fx:id="Sair1" mnemonicParsing="false" onAction="#SairMenu" text="Sair">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/logout.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Gerenciar Colaboradores">
-                     <items>
-                        <MenuItem fx:id="mnCadastrarNovoColaborador1" mnemonicParsing="false" onAction="#CadastrarColaborador" text="Novo Colaborador">
-                           <graphic>
-                              <ImageView fx:id="imgNovoColaborador1" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/novocolaborador.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="mnBuscarColaborador" mnemonicParsing="false" onAction="#BuscarColaborador" text="Buscar Colaborador" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Calculadora">
-                     <items>
-                        <MenuItem fx:id="mnValeTransporte1" mnemonicParsing="false" onAction="#CalcularVT" text="Vale Transporte">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/valetransporte.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="mnFGTS1" mnemonicParsing="false" onAction="#CalcularFGTS" text="FGTS">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/FGTS.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="mnHoraExtra1" mnemonicParsing="false" onAction="#CalcularHoraExtra" text="Hora Extra">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/horaextra.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="mnFalta1" mnemonicParsing="false" onAction="#CalcularFalta" text="Falta">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/falta.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="mnSalarioFamilia1" mnemonicParsing="false" onAction="#CalcularSalarioFamilia" text="Salario Familia">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/salariofamilia.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="mnInsalubridade1" mnemonicParsing="false" onAction="#CalcularInsalubridade" text="Insalubridade">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/insalubridade.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                     </items>
-                  </Menu>
-               </menus>
-            </MenuBar>
             <ImageView fitHeight="3.0" fitWidth="600.0" layoutX="690.0" layoutY="142.0" pickOnBounds="true">
                <image>
                   <Image url="@../imagens/split.png" />
                </image>
             </ImageView>
-            <Label fx:id="LabelEJP1" alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="127.0" prefHeight="2.0" prefWidth="431.0" text="B a n c o  E J P" textFill="#00000054">
+            <Label fx:id="LabelEJP1" alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="127.0" prefHeight="2.0" prefWidth="431.0" text="S G B" textFill="#00000054">
                <font>
                   <Font size="14.0" />
                </font>

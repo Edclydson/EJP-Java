@@ -55,7 +55,12 @@ public class FGTSController {
 
     @FXML
     void CadastrarColaborador(ActionEvent event) {
-
+        CadastroColaboradorView telaseguinte = new CadastroColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuFGTSView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML

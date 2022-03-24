@@ -19,7 +19,7 @@ public class BuscarColaboradorView extends Application
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telabuscacolaborador.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Buscar Colaborador - Banco EJP");
+        estagio.setTitle("Buscar Colaborador - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.show();
     }    

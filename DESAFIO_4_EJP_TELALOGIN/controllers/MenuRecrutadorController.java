@@ -53,7 +53,12 @@ public class MenuRecrutadorController {
 
     @FXML
     void CadastrarColaborador(ActionEvent event) {
-
+        CadastroColaboradorView telaseguinte = new CadastroColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuRecrutadorView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
 

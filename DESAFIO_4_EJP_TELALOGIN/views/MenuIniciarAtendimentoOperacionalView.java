@@ -17,7 +17,7 @@ public class MenuIniciarAtendimentoOperacionalView extends Application{
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telainiciaratendimentooperacional.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Escola de Jovens Programadores");
+        estagio.setTitle("Atendimento - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

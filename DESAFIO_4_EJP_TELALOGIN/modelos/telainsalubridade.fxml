@@ -141,7 +141,7 @@
                   <Image url="@../imagens/split.png" />
                </image>
             </ImageView>
-            <Label fx:id="LabelEJP1" alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="127.0" prefHeight="2.0" prefWidth="431.0" text="B a n c o  E J P" textFill="#00000054">
+            <Label fx:id="LabelEJP1" alignment="CENTER" contentDisplay="CENTER" layoutX="408.0" layoutY="127.0" prefHeight="2.0" prefWidth="431.0" text="S G B " textFill="#00000054">
                <font>
                   <Font size="14.0" />
                </font>

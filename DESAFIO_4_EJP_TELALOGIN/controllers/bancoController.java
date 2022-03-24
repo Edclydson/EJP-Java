@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
@@ -121,7 +122,6 @@ public class bancoController {
     public void consultaCadastroCPF(String cpf,Conta conta){
         String sql = "SELECT cpf_cliente FROM cliente_tb WHERE cpf_cliente=?;";
         ResultSet rsDAO;
-        conn = new conexaodb().conecta_banco();
         try{
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, cpf);
@@ -149,7 +149,6 @@ public class bancoController {
     public boolean consultaGerente(String cpf){
         String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente = ?;";
         ResultSet rsDAO;
-        conn = new conexaodb().conecta_banco();
         try{
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, cpf);
@@ -432,4 +431,102 @@ public class bancoController {
 
     public void extrato(){JOptionPane.showMessageDialog(null,"Aguarde a impressão do seu extrato!");}
 
+
+    /**
+     * 
+     * @param nome
+     * @param cargo
+     * @param salario
+     * METODO QUE GERA AS CREDENCIAIS DO COLABORADOR E VERIFICA NO BANCO
+     * SE HA REDUNDANCIA, PARA DEPOIS REGISTRAR NA BASE DE DADOS
+     */
+    public void cadastraColaborador(String nome,String cargo, String salario){
+        String MatriculaGerada = geraMatricula();
+        String userNovo = "";
+        String senhaNova = "";
+        Random geraSenha = new Random();
+        do{
+            if(cargo.equals("RH")){
+                userNovo = "rec"+MatriculaGerada.substring(10, 14);
+                senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+            }
+            else if(cargo.equals("Gerente")){
+                userNovo = "ger"+MatriculaGerada.substring(10, 14);
+                senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+            }
+            else{
+                userNovo = "opr"+MatriculaGerada.substring(10, 14);
+                senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+            }
+            // VERIFICA SE EXISTE ALGUMA CREDENCIAL IGUAL
+            try{
+                String verificaCredencial = "SELECT user_funcionario FROM funcionario_tb WHERE user_funcionario = ?;";
+                pstm = conn.prepareStatement(verificaCredencial);
+                pstm.setString(1, userNovo);
+                rsDAO = pstm.executeQuery();
+                if(rsDAO.next()){
+                    if(cargo.equals("RH")){
+                        userNovo = "rec"+MatriculaGerada.substring(0, 4);
+                        senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                    }
+                    else if(cargo.equals("Gerente")){
+                        userNovo = "ger"+MatriculaGerada.substring(0, 4);
+                        senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                    }
+                    else{
+                        userNovo = "opr"+MatriculaGerada.substring(0, 4);
+                        senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                    }
+                }
+                else{break;}
+            }catch(SQLException e){}
+        }while(true);
+
+        try {
+            String registraColaborador = "INSERT INTO funcionario_tb VALUES(?,?,?,?,?,?);";
+            pstm = conn.prepareStatement(registraColaborador);
+            pstm.setString(1,nome);
+            pstm.setString(2,MatriculaGerada);
+            pstm.setString(3,userNovo);
+            pstm.setString(4,senhaNova);
+            pstm.setString(5,salario);
+            pstm.setString(6,cargo);
+            pstm.execute();
+            pstm.close();
+        } catch (SQLException e) {}
+        finally{JOptionPane.showMessageDialog(null,"Colaborador cadastrado na base de dados\n Dados de Acesso:\nUsuario: "+userNovo+"\nSenha: "+senhaNova);}
+            System.out.println("USER GERADO:" + userNovo);
+            System.out.println("SENHA GERADA:" + senhaNova);
+    }
+
+    /**
+     * 
+     * @return
+     * FUNÇAO PARA GERAR O NUMERO DA MATRICULA DO FUNCIONARIO
+     */
+    public String geraMatricula(){
+        Random geradorMatricula = new Random();
+        String novaMatricula;
+        do{
+            int part1 = geradorMatricula.nextInt(0000001,9999998);
+            int part2 = geradorMatricula.nextInt(0000001,9999998);
+    
+             novaMatricula = String.valueOf(part1)+String.valueOf(part2);
+            
+            try{
+                String validaMatricula = "SELECT matricula_funcionario FROM funcionario_tb WHERE matricula_funcionario = ?;";
+                pstm = conn.prepareStatement(validaMatricula);
+                pstm.setString(1,novaMatricula);
+                rsDAO = pstm.executeQuery();
+                if(rsDAO.next()){
+                    continue;
+                }
+                else{
+                    break;
+                }
+            }
+            catch(SQLException e){}
+        }while(true);
+        return novaMatricula;
+    }
 }

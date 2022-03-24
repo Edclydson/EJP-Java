@@ -18,7 +18,7 @@ public class MenuOperadorView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telaoperacional.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Operacional - Banco EJP");
+        estagio.setTitle("Operacional - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

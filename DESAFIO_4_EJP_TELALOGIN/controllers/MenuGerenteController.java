@@ -21,7 +21,7 @@ public class MenuGerenteController {
     private ImageView imgbanco;
     
     @FXML
-    private Label LabelEJP;
+    private Label LabelEJP,lblBoasVindas;
 
     @FXML
     private VBox Janela;

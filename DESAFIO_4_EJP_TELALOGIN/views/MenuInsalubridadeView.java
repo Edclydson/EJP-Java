@@ -17,7 +17,7 @@ public class MenuInsalubridadeView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telainsalubridade.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Calcular Insalubridade - Banco EJP");
+        estagio.setTitle("Calcular Insalubridade - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

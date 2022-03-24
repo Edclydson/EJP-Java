@@ -17,7 +17,7 @@ public class MenuValeTransporteView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telavaletransporte.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Calcular Vale Transporte - Banco EJP");
+        estagio.setTitle("Calcular Vale Transporte - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

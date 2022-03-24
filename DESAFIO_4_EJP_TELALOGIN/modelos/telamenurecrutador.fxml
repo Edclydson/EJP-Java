@@ -129,7 +129,7 @@
                   </Menu>
               </menus>
             </MenuBar>
-            <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="569.0" layoutY="325.0" text="B a n c o  E J P" textFill="#0000005e">
+            <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="341.0" layoutY="325.0" text="S G B - Sistema de Gerenciamento Bancário" textFill="#0000005e">
                <font>
                   <Font size="36.0" />
                </font>

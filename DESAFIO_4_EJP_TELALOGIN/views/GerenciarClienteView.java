@@ -17,7 +17,7 @@ public class GerenciarClienteView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telagerenciarcliente.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Banco EJP");
+        estagio.setTitle("Gerência de Clientes - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

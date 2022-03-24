@@ -19,7 +19,7 @@ public class CadastroContaView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telacadastroconta.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Cadastro Conta - Banco EJP");
+        estagio.setTitle("Cadastro Conta - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.show();
     }    

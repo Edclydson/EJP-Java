@@ -17,7 +17,7 @@ public class DepositoView extends Application{
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/teladeposito.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Depósito - Banco EJP");
+        estagio.setTitle("Operação Depósito - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

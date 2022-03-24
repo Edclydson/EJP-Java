@@ -52,7 +52,12 @@ public class HoraExtraController {
 
     @FXML
     void CadastrarColaborador(ActionEvent event) {
-
+        CadastroColaboradorView telaseguinte = new CadastroColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuHoraExtraView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML

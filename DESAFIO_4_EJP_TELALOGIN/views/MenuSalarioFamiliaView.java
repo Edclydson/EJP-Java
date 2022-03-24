@@ -17,7 +17,7 @@ public class MenuSalarioFamiliaView extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telasalariofamilia.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Calcular Salário Família - Banco EJP");
+        estagio.setTitle("Calcular Salário Família - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

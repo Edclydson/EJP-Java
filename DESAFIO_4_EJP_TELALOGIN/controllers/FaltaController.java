@@ -54,7 +54,12 @@ public class FaltaController {
 
     @FXML
     void CadastrarColaborador(ActionEvent event) {
-
+        CadastroColaboradorView telaseguinte = new CadastroColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuFaltaView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML

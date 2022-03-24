@@ -54,7 +54,12 @@ public class ValeTransporteController {
 
     @FXML
     void CadastrarColaborador(ActionEvent event) {
-
+        CadastroColaboradorView telaseguinte = new CadastroColaboradorView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuValeTransporteView.getStage().close();
+        }
+        catch(Exception e){e.printStackTrace();}
     }
 
     @FXML

@@ -17,7 +17,7 @@ public class TransferenciaView extends Application{
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telatransferencia.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Escola de Jovens Programadores");
+        estagio.setTitle("Operação Transferência - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

@@ -17,7 +17,7 @@ public class SaqueView extends Application{
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telasaque.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Operação Saque - Banco EJP");
+        estagio.setTitle("Operação Saque - Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();

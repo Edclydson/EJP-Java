@@ -5,6 +5,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
+/**
+ * objetiva o cadastro de clientes e contas bancarias permitindo a otimização dos processos de um banco.
+ */
+
 public class LoginView extends Application{
     private static Stage stage;
     public static void main(String[] args)
@@ -17,7 +22,7 @@ public class LoginView extends Application{
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("../modelos/telalogin.fxml"));
         Parent root = fxmlLoader.load();
         Scene cena = new Scene(root);
-        estagio.setTitle("Escola de Jovens Programadores");
+        estagio.setTitle("Sistema de Gerenciamento Bancário");
         estagio.setScene(cena);
         estagio.setResizable(false);
         estagio.show();
