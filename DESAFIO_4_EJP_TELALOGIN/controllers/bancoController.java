@@ -35,6 +35,7 @@ public class bancoController {
      * 
      * @param contaNova
      * Classe onde as informações da conta aberta pelo cliente ficam
+     * CHAMADO NA CLASSE CADASTRO CLIENTE CONTROLLER
      */
     public void cadastracliente(Cliente novoCliente, Conta contaNova){
         String sql = "INSERT INTO cliente_tb (nome,cpf_cliente,endereco_cliente,telefone_cliente) VALUES (?,?,?,?);";
@@ -54,9 +55,7 @@ public class bancoController {
             else{
                 cadastraContaPoupanca(Cliente.getCpfCliente(),contaNova);
             }
-            
             JOptionPane.showMessageDialog(null,"Cliente foi cadastrado com sucesso!");
-
         } 
         catch (Exception erro) {JOptionPane.showMessageDialog(null,"bancoController "+ erro);}
     }
@@ -66,7 +65,8 @@ public class bancoController {
      * @param cpf
      * @param conta
      * CPF E CONTA PARA CADASTRO DE NOVA CONTA CORRENTE, PARTINDO DO PONTO QUE O CLIENTE
-     * JÁ TENHA SIDO CADASTRADO NO BANCO
+     * JÁ TENHA SIDO CADASTRADO NO 
+     * CHAMADO DENTRO DO METODO CONSULTA CADASTRO CPF NO BANCO CONTROLLER
      */
     public void cadastraContaCorrente(String cpf, Conta conta){
         String sql = "INSERT INTO conta_tb (cpf_cliente_titular,num_conta,tipo_conta,saldo,senha) VALUES (?,?,?,?,?);";
@@ -92,6 +92,7 @@ public class bancoController {
      * @param conta
      * CPF E CONTA PARA CADASTRO DE NOVA CONTA POUPANÇA, PARTINDO DO PONTO QUE O CLIENTE
      * JÁ TENHA SIDO CADASTRADO NO BANCO
+     * CHAMADO DENTRO DO METODO CONSULTA CADASTRO CPF NO BANCO CONTROLLER
      */
     public void cadastraContaPoupanca(String cpf, Conta conta){
         String sql = "INSERT INTO conta_tb (cpf_cliente_titular,num_conta,tipo_conta,saldo,senha) VALUES (?,?,?,?,?);";
@@ -118,6 +119,7 @@ public class bancoController {
      * VERIFICAÇÃO REALIZADA PARA SABER SE O CPF INFORMADO TEM OU NÃO CADASTRO NO BANCO
      * SE SIM ELE ABRE A CONTA 
      * CASO CONTRÁRIO O MESSAGE DIALOG DISPARA
+     * CHAMADO NA CLASSE CADASTRO CONTA CONTROLLER
      */
     public void consultaCadastroCPF(String cpf,Conta conta){
         String sql = "SELECT cpf_cliente FROM cliente_tb WHERE cpf_cliente=?;";
@@ -145,6 +147,7 @@ public class bancoController {
      * @param cpf
      * @param nome
      * CONSULTA SIMPLES REALIZADA PELO GERENTE
+     * CHAMADA DENTRO DA CLASSE GERENCIAR SENHA CONTROLLER
      */
     public boolean consultaGerente(String cpf){
         String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente = ?;";
@@ -178,6 +181,7 @@ public class bancoController {
      * @param endereco
      * @param telefone
      * ATUALIZAÇÃO DE DADOS REALIZADA PELO GERENTE
+     * CHAMADO DENTRO DA CLASSE GERENCIAR SENHA CONTROLLER
      */
     public void alteraGerente(String cpf,String nome, String endereco, String telefone){
         String atualizacao = "UPDATE cliente_tb SET nome = ?,endereco_cliente = ?, telefone_cliente = ? WHERE cpf_cliente = ?;";
@@ -197,6 +201,7 @@ public class bancoController {
      * 
      * @param cpf
      * REMOÇAO DO CLIENTE SE NAO HOUVER MAIS CONTAS ABERTAS VINCULADAS AO SEU CPF
+     * CHAMADO NO GERENCIAR CLIENTE CONTROLLER
      */
      public void removeGerente(String cpf){
         String remocao = "DELETE FROM cliente_tb  WHERE cpf_cliente = ?;";
@@ -222,6 +227,7 @@ public class bancoController {
      * 
      * @param cpf
      * CONSULTA SIMPLES REALIZADA ANTES DE INICIAR O ATENDIMENTO OPERACIONAL
+     * CHAMADO NA CLASSE MENU INICIAR ATENDIMENTO OPERACIONAL CONTROLLER
      */
     public void consultaCadastroCPF(String cpf){
         String sql = "SELECT * FROM cliente_tb WHERE cpf_cliente=?;";
@@ -244,6 +250,7 @@ public class bancoController {
      * @param cpf
      * METODO RESPONSAVEL POR VERIFICAR A SITUAÇAO DO CLIENTE ANTES DO ATENDIMENTO
      * E ATRIBUIR VALORES AS VARIAVEIS DA CLASSE CONTA
+     * CHAMADO NO METODO CONSULTA CADASTRO CPF NO BANCO CONTROLLER
      */
     public void IniciaOperacaoContaCliente(String cpf){
         Conta operandoConta = new Conta();
@@ -269,6 +276,7 @@ public class bancoController {
      * @param valorDeposito
      * METODO QUE REALIZA O DEPOSITO NA CONTA INFORMADA
      * ainda não solicita a senha para realizar a operação
+     * CHAMADO NA CLASSE MENU OPERACIONAL CONTROLLER
      */
     public void depositar(String numeroConta,String valorDeposito){
         Conta contaDeposito = new Conta();
@@ -312,6 +320,7 @@ public class bancoController {
      * @param cpf
      * METODO QUE REALIZA SAQUE NA CONTA 
      * ainda não solicita a senha para realizar a operação
+     * CHAMADO NA CLASSE MENU OPERACIONAL CONTROLLER
      */
     public void sacar(String valorSaque, String cpf){
         Double saldoConta = 0.0;
@@ -356,6 +365,7 @@ public class bancoController {
      * @param valorTransferencia
      * METODO QUE REALIZA TRANSFERENCIA ENTRE AS CONTAS
      * ainda não solicita a senha para realizar a operação
+     * CHAMADO NA CLASSE MENU OPERACIONAL CONTROLLER
      */
     public void transferir(String numeroContaDestino, String valorTransferencia){
         String cpfDestino = "",  saldoContaDestino =""; //, nomeDestino = "", tipoContaDestino = "";
@@ -385,10 +395,6 @@ public class bancoController {
                 while(rsDAO.next()){
                     cpfDestino = rsDAO.getString("cpf_cliente_titular");
                     saldoContaDestino = rsDAO.getString("saldo");
-                   
-                   /* if(rsDAO.getString("tipo_conta").equals("CC")){
-                        tipoContaDestino = "Conta Corrente";
-                    }else{tipoContaDestino = "Conta Poupança";}*/
                 }
                 //RETIRANDO DA CONTA ORIGEM
                 pstm = conn.prepareStatement(sqlContaorigem);
@@ -404,18 +410,6 @@ public class bancoController {
                 
                 pstm.close();
                 JOptionPane.showMessageDialog(null,"Transferencia realizada com sucesso!");
-                
-                /*
-                pstm = conn.prepareStatement("SELECT nome FROM cliente_tb WHERE cpf_cliente = ?");
-                pstm.setString(1, cpfDestino);
-                rsDAO = pstm.executeQuery();
-                while(rsDAO.next()){
-                    nomeDestino = rsDAO.getString("nome");
-                }
-                pstm.close();
-                */
-
-
             }
             catch (Exception e) {e.printStackTrace();}
             finally{
@@ -439,6 +433,7 @@ public class bancoController {
      * @param salario
      * METODO QUE GERA AS CREDENCIAIS DO COLABORADOR E VERIFICA NO BANCO
      * SE HA REDUNDANCIA, PARA DEPOIS REGISTRAR NA BASE DE DADOS
+     * CHAMADO DENTRO DA CLASSE CADASTRO COLABORADOR CONTROLLER
      */
     public void cadastraColaborador(String nome,String cargo, String salario){
         String MatriculaGerada = geraMatricula();
@@ -503,6 +498,7 @@ public class bancoController {
      * 
      * @return
      * FUNÇAO PARA GERAR O NUMERO DA MATRICULA DO FUNCIONARIO
+     * CHAMADA DENTRO DO METODO CADASTRA COLABORADOR NO BANCO CONTROLLER
      */
     public String geraMatricula(){
         Random geradorMatricula = new Random();
@@ -529,4 +525,167 @@ public class bancoController {
         }while(true);
         return novaMatricula;
     }
+
+    /**
+     * 
+     * @param cpf
+     * METODO PARA BUSCAR CONTA PELO CPF DO TITULAR
+     * CHAMADO NA CLASSE DE GERENCIAR SENHA CONTROLLER
+     */
+    public void buscaContaCPF(String cpf){
+        try{
+            String buscaConta = "SELECT * FROM conta_tb WHERE cpf_cliente_titular = ?;";
+            pstm = conn.prepareStatement(buscaConta);
+            pstm.setString(1,cpf);
+            rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    GerenciarSenhaController.numConta = rsDAO.getString("num_conta");
+                    GerenciarSenhaController.senha = rsDAO.getString("senha");
+                }
+
+                String buscaTitular = "SELECT nome FROM cliente_tb WHERE cpf_cliente = ?;";
+                pstm = conn.prepareStatement(buscaTitular);
+                pstm.setString(1, cpf);
+                rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    GerenciarSenhaController.nomeTitular = rsDAO.getString("nome");
+                }
+        }
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com sua requisição:");}
+    }
+    
+     /**
+     * 
+     * @param cpf
+     * METODO PARA BUSCAR CONTA PELO CPF DO TITULAR
+     * CHAMADO NA CLASSE DE GERENCIAR ENCERRA CONTROLLER
+     */
+    public void buscaEncerraContaCPF(String cpf){
+        try{
+            String buscaConta = "SELECT * FROM conta_tb WHERE cpf_cliente_titular = ?;";
+            pstm = conn.prepareStatement(buscaConta);
+            pstm.setString(1,cpf);
+            rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    GerenciarEncerraController.numConta = rsDAO.getString("num_conta");
+                    GerenciarEncerraController.saldo = rsDAO.getString("saldo");
+                }
+
+                String buscaTitular = "SELECT nome FROM cliente_tb WHERE cpf_cliente = ?;";
+                pstm = conn.prepareStatement(buscaTitular);
+                pstm.setString(1, cpf);
+                rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    GerenciarEncerraController.nomeTitular = rsDAO.getString("nome");
+                }
+        }
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com sua requisição:");}
+    }
+
+    /**
+     * 
+     * @param numConta
+     * METODO PARA BUSCAR CONTA PELO NUMERO DA CONTA
+     * CHAMADO NA CLASSE DE GERENCIAR SENHAS CONTROLLER
+     */
+    public void buscaContaNumConta(String numConta){
+        String cpf ="";
+        try{
+            String buscaConta = "SELECT * FROM conta_tb WHERE num_conta = ?;";
+            pstm = conn.prepareStatement(buscaConta);
+            pstm.setString(1,numConta);
+            rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    cpf = rsDAO.getString("cpf_cliente_titular");
+                    GerenciarSenhaController.numConta = rsDAO.getString("num_conta");
+                    GerenciarSenhaController.senha = rsDAO.getString("senha");
+                }
+                
+                String buscaTitular = "SELECT nome FROM cliente_tb WHERE cpf_cliente = ?;";
+                pstm = conn.prepareStatement(buscaTitular);
+                pstm.setString(1, cpf);
+                rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    GerenciarSenhaController.nomeTitular = rsDAO.getString("nome");
+                }
+        }
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com sua requisição:");}
+    }
+
+    /**
+     * 
+     * @param numConta
+     * METODO PARA BUSCAR CONTA PELO NUMERO DA CONTA
+     * CHAMADO NA CLASSE DE GERENCIAR ENCERRA CONTROLLER
+     */
+    public void buscaEncerraConta(String numConta){
+        String cpf ="";
+        try{
+            String buscaConta = "SELECT * FROM conta_tb WHERE num_conta = ?;";
+            pstm = conn.prepareStatement(buscaConta);
+            pstm.setString(1,numConta);
+            rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    cpf = rsDAO.getString("cpf_cliente_titular");
+                    GerenciarEncerraController.numConta = rsDAO.getString("num_conta");
+                    GerenciarEncerraController.saldo = rsDAO.getString("saldo");
+                }
+                
+                String buscaTitular = "SELECT nome FROM cliente_tb WHERE cpf_cliente = ?;";
+                pstm = conn.prepareStatement(buscaTitular);
+                pstm.setString(1, cpf);
+                rsDAO = pstm.executeQuery();
+                while(rsDAO.next()){
+                    GerenciarEncerraController.nomeTitular = rsDAO.getString("nome");
+                }
+        }
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com sua requisição:");}
+    }
+
+    /**
+     * 
+     * @param numeroConta
+     * @param novaSenha
+     * METODO PARA ALTERAR A SENHA DA CONTA BANCARIA DO CLIENTE
+     * CHAMADO NA CLASSE GERENCIAR SENHA CONTROLLER
+     */
+    public void alteraSenha(String numeroConta, String novaSenha){
+        try {
+            String sql = "UPDATE conta_tb SET senha = ? WHERE num_conta = ?;";
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, novaSenha);
+            pstm.setString(2, numeroConta);
+            pstm.execute();
+            pstm.close();
+            JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
+        }
+        catch (SQLException e) {JOptionPane.showMessageDialog(null,"Houve um problema com sua requisição:");}        
+    }
+
+    /**
+     * 
+     * @param numeroConta
+     * @param senhaGerente
+     * METODO PARA ENCERRAR A CONTA DO CLIENTE
+     * CHAMADO NA CLASSE GERENCIAR ENCERRA CONTROLLER
+     */
+    public void encerraConta(String numeroConta, String senhaGerente){
+        try {
+            String authGerente = "SELECT password_funcionario FROM funcionario_tb WHERE password_funcionario = ?;";
+            pstm = conn.prepareStatement(authGerente);
+            pstm.setString(1,senhaGerente);
+            rsDAO = pstm.executeQuery();
+            if(rsDAO.next()){
+                String fechamentoConta = "delete from conta_tb where num_conta = ?;";
+                pstm = conn.prepareStatement(fechamentoConta);
+                pstm.setString(1, numeroConta);
+                pstm.execute();
+                JOptionPane.showMessageDialog(null,"Conta Encerrada com sucesso!");
+            }
+            else{JOptionPane.showMessageDialog(null,"Senha Incorreta!");}
+        }
+        catch (SQLException e) {JOptionPane.showMessageDialog(null,"Ocorreu um erro!");}
+    }
+
+    //public void boasVindas()
 }

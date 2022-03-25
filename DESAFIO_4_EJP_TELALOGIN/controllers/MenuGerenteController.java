@@ -2,6 +2,8 @@ package DESAFIO_4_EJP_TELALOGIN.controllers;
 import DESAFIO_4_EJP_TELALOGIN.views.CadastroClienteView;
 import DESAFIO_4_EJP_TELALOGIN.views.CadastroContaView;
 import DESAFIO_4_EJP_TELALOGIN.views.GerenciarClienteView;
+import DESAFIO_4_EJP_TELALOGIN.views.GerenciarEncerraView;
+import DESAFIO_4_EJP_TELALOGIN.views.GerenciarSenhaView;
 import DESAFIO_4_EJP_TELALOGIN.views.LoginView;
 import DESAFIO_4_EJP_TELALOGIN.views.MenuGerenteView;
 import javafx.event.ActionEvent;
@@ -45,6 +47,9 @@ public class MenuGerenteController {
     private MenuItem GerenciarClientes,GerenciarContas;
 
     @FXML
+    private MenuItem EncerrarConta,AlterarSenha;
+
+    @FXML
     void CadastrarCliente(ActionEvent event) {
         CadastroClienteView telaseguinte = new CadastroClienteView();
         try{
@@ -72,8 +77,21 @@ public class MenuGerenteController {
     }
 
     @FXML
-    void gerenciarContas(ActionEvent event) {
+    void GerenciarEncerrarConta(ActionEvent event) {
+        GerenciarEncerraView telaseguinte = new GerenciarEncerraView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuGerenteView.getStage().close();
+        }catch(Exception e ){e.printStackTrace();}
+    }
 
+    @FXML
+    void GerenciarSenhaConta(ActionEvent event) {
+        GerenciarSenhaView telaseguinte = new GerenciarSenhaView();
+        try{
+            telaseguinte.start(new Stage());
+            MenuGerenteView.getStage().close();
+        }catch(Exception e ){e.printStackTrace();}
     }
     
     @FXML

@@ -85,43 +85,27 @@
                 </Menu>
                   <Menu mnemonicParsing="false" text="Gerenciar">
                     <items>
-                      <MenuItem fx:id="GerenciarClientes" mnemonicParsing="false" onAction="#gerenciarClientes" text="Clientes" />
-                        <MenuItem fx:id="GerenciarContas" mnemonicParsing="false" onAction="#gerenciarContas" text="Contas" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Simular">
-                    <items>
-                        <Menu mnemonicParsing="false" text="Investimento">
+                      <MenuItem fx:id="GerenciarClientes" mnemonicParsing="false" onAction="#gerenciarClientes" text="Clientes">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/gerenciar_clientes.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                        <Menu fx:id="GerenciarContas" mnemonicParsing="false" text="Contas">
                           <items>
-                            <MenuItem fx:id="SimulaRendaFixa" mnemonicParsing="false" onAction="#simularRendaFixa" text="Renda Fixa" />
-                              <MenuItem fx:id="SimulaFundoImobiliario" mnemonicParsing="false" onAction="#simularFundoImobiliario" text="Fundos Imobiliários" />
+                            <MenuItem fx:id="AlterarSenha" mnemonicParsing="false" onAction="#GerenciarSenhaConta" text="Alterar Senha" />
+                              <MenuItem fx:id="EncerrarConta" mnemonicParsing="false" onAction="#GerenciarEncerrarConta" text="Encerrar Conta" />
                           </items>
                            <graphic>
                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../imagens/investimento.png" />
+                                    <Image url="@../imagens/gerenciar_contas.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Menu>
-                      <MenuItem fx:id="SimulaEmprestimo" mnemonicParsing="false" onAction="#simularEmprestimo" text="Empréstimo">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/emprestimo.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="SimulaFinanciamento" mnemonicParsing="false" onAction="#simularFinanciamento" text="Financiamento">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/financiamento.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
                     </items>
                   </Menu>
               </menus>

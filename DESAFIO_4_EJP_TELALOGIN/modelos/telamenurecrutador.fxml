@@ -75,58 +75,6 @@
                         <MenuItem fx:id="mnBuscarColaborador" mnemonicParsing="false" onAction="#BuscarColaborador" text="Buscar Colaborador" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Calculadora">
-                     <items>
-                        <MenuItem fx:id="mnValeTransporte" mnemonicParsing="false" onAction="#CalcularVT" text="Vale Transporte">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/valetransporte.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnFGTS" mnemonicParsing="false" onAction="#CalcularFGTS" text="FGTS">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/FGTS.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnHoraExtra" mnemonicParsing="false" onAction="#CalcularHoraExtra" text="Hora Extra">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/horaextra.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnFalta" mnemonicParsing="false" onAction="#CalcularFalta" text="Falta">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/falta.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnSalarioFamilia" mnemonicParsing="false" onAction="#CalcularSalarioFamilia" text="Salario Familia">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/salariofamilia.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></MenuItem>
-                        <MenuItem fx:id="mnInsalubridade" mnemonicParsing="false" onAction="#CalcularInsalubridade" text="Insalubridade">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/insalubridade.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></MenuItem>
-                     </items>
-                  </Menu>
               </menus>
             </MenuBar>
             <Label fx:id="LabelEJP" alignment="CENTER" contentDisplay="CENTER" layoutX="341.0" layoutY="325.0" text="S G B - Sistema de Gerenciamento Bancário" textFill="#0000005e">
