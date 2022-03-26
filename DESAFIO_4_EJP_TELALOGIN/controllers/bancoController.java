@@ -57,7 +57,7 @@ public class bancoController {
             }
             JOptionPane.showMessageDialog(null,"Cliente foi cadastrado com sucesso!");
         } 
-        catch (Exception erro) {JOptionPane.showMessageDialog(null,"bancoController "+ erro);}
+        catch (SQLException erro) {JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
     }
 
     /**
@@ -83,7 +83,7 @@ public class bancoController {
 
             JOptionPane.showMessageDialog(null,"Uma nova conta vinculada ao cpf: "+cpf+" foi registrada com sucesso!");
         }
-        catch(SQLException e){JOptionPane.showMessageDialog(null,"bancoController "+ e);}
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
     }
     
     /**
@@ -109,7 +109,7 @@ public class bancoController {
 
             JOptionPane.showMessageDialog(null,"Uma nova conta vinculada ao cpf: "+cpf+" foi registrada com sucesso!");
         }
-        catch(SQLException e){JOptionPane.showMessageDialog(null,"bancoController "+ e);}
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
     }
 
     /**
@@ -139,7 +139,7 @@ public class bancoController {
             }
             else{JOptionPane.showMessageDialog(null,"CPF informado não possui cadastro na base de dados!");}
         }
-        catch(SQLException erro){JOptionPane.showMessageDialog(null,"bancoController "+ erro);}
+        catch(SQLException erro){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
     }
 
     /**
@@ -170,7 +170,7 @@ public class bancoController {
             }
             pstm.close();
         }
-        catch(SQLException erro){JOptionPane.showMessageDialog(null,"bancoController "+ erro);}
+        catch(SQLException erro){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
         return false;
     }
 
@@ -193,7 +193,7 @@ public class bancoController {
             pstm.setString(4, cpf);
             pstm.execute();
             pstm.close();
-        }catch(SQLException e){}
+        }catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
         JOptionPane.showMessageDialog(null,"Cadastro Atualizado!");
     }
 
@@ -219,7 +219,7 @@ public class bancoController {
                 pstm.execute();
                 JOptionPane.showMessageDialog(null,"Cliente foi removido da base de dados com sucesso!");
             }
-        }catch(SQLException e){}
+        }catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
     }
 
 
@@ -242,7 +242,7 @@ public class bancoController {
             }
             else{JOptionPane.showMessageDialog(null,"CPF informado não consta na base de dados!");}
         }
-        catch(SQLException erro){JOptionPane.showMessageDialog(null,"bancoController "+ erro);}
+        catch(SQLException erro){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
     }
 
     /**
@@ -303,7 +303,7 @@ public class bancoController {
             pstm.close();
             JOptionPane.showMessageDialog(null,"Deposito foi realizado com sucesso!");
         }
-        catch(SQLException e){JOptionPane.showMessageDialog(null,"bancoController "+e);}
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
         finally{
             MenuOperadorView telaanterior = new MenuOperadorView();
             try{
@@ -346,7 +346,7 @@ public class bancoController {
                 JOptionPane.showMessageDialog(null,"Saque Autorizado!");
             }
         }
-        catch(SQLException e){}
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
         finally{
             MenuOperadorView telaanterior = new MenuOperadorView();
             try{
@@ -378,7 +378,7 @@ public class bancoController {
                 saldoContaOrigem = Double.parseDouble(rsDAO.getString("saldo"));
             }
         }
-        catch(Exception e){e.printStackTrace();}
+        catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
 
         if(saldoContaOrigem <= 0.0 || Double.parseDouble(valorTransferencia) > saldoContaOrigem){
             JOptionPane.showMessageDialog(null,"Saldo Insuficiente");
@@ -473,9 +473,8 @@ public class bancoController {
                     }
                 }
                 else{break;}
-            }catch(SQLException e){}
+            }catch(SQLException e){JOptionPane.showMessageDialog(null,"Gerando novas credenciais..");}
         }while(true);
-
         try {
             String registraColaborador = "INSERT INTO funcionario_tb VALUES(?,?,?,?,?,?);";
             pstm = conn.prepareStatement(registraColaborador);
@@ -487,10 +486,8 @@ public class bancoController {
             pstm.setString(6,cargo);
             pstm.execute();
             pstm.close();
-        } catch (SQLException e) {}
+        } catch (SQLException e) {JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
         finally{JOptionPane.showMessageDialog(null,"Colaborador cadastrado na base de dados\n Dados de Acesso:\nUsuario: "+userNovo+"\nSenha: "+senhaNova);}
-            System.out.println("USER GERADO:" + userNovo);
-            System.out.println("SENHA GERADA:" + senhaNova);
     }
 
     /**
@@ -520,7 +517,7 @@ public class bancoController {
                     break;
                 }
             }
-            catch(SQLException e){}
+            catch(SQLException e){JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");}
         }while(true);
         return novaMatricula;
     }
@@ -686,5 +683,94 @@ public class bancoController {
         catch (SQLException e) {JOptionPane.showMessageDialog(null,"Ocorreu um erro!");}
     }
 
-    //public void boasVindas()
+    /**
+     * 
+     * @param matriculaColaborador
+     * METODO CHAMADO NA CLASSE BUSCAR COLABORADOR CONTROLLER
+     */
+    public void buscaColaborador(String matriculaColaborador){
+        try {
+            String busca = "SELECT * FROM funcionario_tb WHERE matricula_funcionario = ?;";
+            pstm = conn.prepareStatement(busca);
+            pstm.setString(1,matriculaColaborador);
+            rsDAO = pstm.executeQuery();
+            while(rsDAO.next()){
+                BuscarColaboradorController.nomeColaborador = rsDAO.getString("nome_funcionario");
+                BuscarColaboradorController.LoginColaborador = rsDAO.getString("user_funcionario");
+                BuscarColaboradorController.SenhaColaborador = rsDAO.getString("password_funcionario");
+                BuscarColaboradorController.SalarioColaborador = rsDAO.getString("salario_funcionario");
+                BuscarColaboradorController.CargoColaborador = rsDAO.getString("cargo_funcionario");
+                BuscarColaboradorController.MatriculaColaborador = rsDAO.getString("matricula_funcionario");
+            }
+        } 
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");
+        }
+    }
+
+    /**
+     * 
+     * @param matricula
+     * @param login
+     * @param senha
+     * @param salario
+     * @param cargo
+     * METODO CHAMADO NA CLASSE BUSCA COLABORADOR CONTROLLER
+     */
+    public void alterarColaborador(String matricula,String login,String senha,String salario,String cargo){
+        if(matricula.equals("")){
+            JOptionPane.showMessageDialog(null,"Para alterar é necessário informar uma matricula!");
+        }
+        else{
+            try {
+                String alteracoes = "UPDATE funcionario_tb SET user_funcionario = ?,password_funcionario = ?,salario_funcionario = ?,cargo_funcionario = ? WHERE matricula_funcionario = ?;";
+                pstm = conn.prepareStatement(alteracoes);
+                pstm.setString(1, login);
+                pstm.setString(2, senha);
+                pstm.setString(3, salario);
+                pstm.setString(4, cargo);
+                pstm.setString(5, matricula);
+                pstm.execute();
+                BuscarColaboradorController.nomeColaborador = "";
+                BuscarColaboradorController.LoginColaborador = "";
+                BuscarColaboradorController.SenhaColaborador = "";
+                BuscarColaboradorController.SalarioColaborador = "";
+                BuscarColaboradorController.CargoColaborador = "";
+                BuscarColaboradorController.MatriculaColaborador = "";
+                JOptionPane.showMessageDialog(null,"Colaborador alterado com sucesso!");
+            } 
+            catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param matricula
+     * METODO CHAMADO NA CLASSE BUSCAR COLABORADOR CONTROLLER
+     */
+    public void removeColaborador(String matricula){
+        if(matricula.equals("")){
+            JOptionPane.showMessageDialog(null,"Para remover é necessário informar uma matricula!");
+        }
+        else{
+            try {
+                String remover = "DELETE FROM funcionario_tb WHERE matricula_funcionario = ?;";
+                pstm = conn.prepareStatement(remover);
+                pstm.setString(1, matricula);
+                pstm.execute();
+                BuscarColaboradorController.nomeColaborador = "";
+                BuscarColaboradorController.LoginColaborador = "";
+                BuscarColaboradorController.SenhaColaborador = "";
+                BuscarColaboradorController.SalarioColaborador = "";
+                BuscarColaboradorController.CargoColaborador = "";
+                BuscarColaboradorController.MatriculaColaborador = "";
+                JOptionPane.showMessageDialog(null,"Colaborador foi removido com sucesso!");
+            } 
+            catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,"Houve um problema com a requisição!");
+            }
+        }
+    }
 }

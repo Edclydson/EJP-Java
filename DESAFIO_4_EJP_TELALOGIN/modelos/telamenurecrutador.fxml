@@ -72,7 +72,14 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
-                        <MenuItem fx:id="mnBuscarColaborador" mnemonicParsing="false" onAction="#BuscarColaborador" text="Buscar Colaborador" />
+                        <MenuItem fx:id="mnBuscarColaborador" mnemonicParsing="false" onAction="#BuscarColaborador" text="Buscar Colaborador">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/buscarcolaborador.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
                   </items>
                 </Menu>
               </menus>

@@ -80,7 +80,7 @@
                   </LinearGradient>
                </fill>
             </Rectangle>
-            <TextField fx:id="cpfAtendimento" layoutX="430.0" layoutY="260.0" prefHeight="35.0" prefWidth="500.0">
+            <TextField fx:id="cpfAtendimento" alignment="BASELINE_CENTER" layoutX="430.0" layoutY="260.0" prefHeight="35.0" prefWidth="500.0">
                <font>
                   <Font size="18.0" />
                </font>

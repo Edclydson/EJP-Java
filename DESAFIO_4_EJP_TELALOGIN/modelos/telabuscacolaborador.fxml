@@ -67,22 +67,62 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtMatriculaColaborador" layoutX="594.0" layoutY="259.0" prefHeight="30.0" prefWidth="250.0">
+            <TextField fx:id="txtBuscaMatriculaColaborador" alignment="BASELINE_CENTER" layoutX="620.0" layoutY="260.0" prefHeight="30.0" prefWidth="300.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Label fx:id="lblMatricula" layoutX="288.0" layoutY="261.0" text="Digite o número da matrícula:">
+            <Label fx:id="lblMatricula" layoutX="340.0" layoutY="265.0" text="Digite o número da matrícula:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="bttBuscar" layoutX="947.0" layoutY="255.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar">
+            <Button fx:id="bttBuscar" layoutX="960.0" layoutY="255.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="30.0" prefWidth="85.0" text="Buscar">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Separator layoutY="360.0" prefWidth="1366.0" />
+            <Separator layoutY="330.0" prefWidth="1366.0" />
+            <TextField fx:id="txtNomeColaborador" alignment="BASELINE_CENTER" layoutX="340.0" layoutY="360.0" prefHeight="30.0" prefWidth="700.0" promptText="Nome do Colaborador">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLoginColaborador" alignment="BASELINE_CENTER" layoutX="340.0" layoutY="400.0" prefHeight="30.0" prefWidth="700.0" promptText="Login Colaborador">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtSenhaColaborador" alignment="BASELINE_CENTER" layoutX="340.0" layoutY="440.0" prefHeight="30.0" prefWidth="700.0" promptText="Senha de Acesso">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtSalarioColaborador" alignment="BASELINE_CENTER" layoutX="340.0" layoutY="480.0" prefHeight="30.0" prefWidth="700.0" promptText="Salário">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtCargoColaborador" alignment="BASELINE_CENTER" layoutX="340.0" layoutY="520.0" prefHeight="30.0" prefWidth="700.0" promptText="Cargo">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="bttVoltar" layoutX="665.0" layoutY="580.0" mnemonicParsing="false" onAction="#Voltar" prefHeight="30.0" prefWidth="85.0" text="Voltar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="bttAlterar" layoutX="570.0" layoutY="580.0" mnemonicParsing="false" onAction="#AlterarColaborador" prefHeight="30.0" prefWidth="85.0" text="Alterar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="bttRemover" layoutX="760.0" layoutY="580.0" mnemonicParsing="false" onAction="#RemoverColaborador" prefHeight="30.0" prefWidth="100.0" text="Remover">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
     </AnchorPane>
   </children>

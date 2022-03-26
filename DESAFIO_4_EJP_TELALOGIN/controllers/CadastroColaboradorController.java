@@ -45,6 +45,9 @@ public class CadastroColaboradorController implements Initializable{
     @FXML
     void Registrar(ActionEvent event) {
         checacampos(txtNomeCompleto.getText().toString(), ChoiceBoxCargo.getValue(), txtSalario.getText().toString());
+        txtNomeCompleto.setText("");
+        txtSalario.setText("");
+        ChoiceBoxCargo.setValue(Cargos[0]);
     }
 
     @FXML
