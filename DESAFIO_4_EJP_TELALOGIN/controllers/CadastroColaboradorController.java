@@ -5,6 +5,8 @@ import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import DESAFIO_4_EJP_TELALOGIN.views.CadastroColaboradorView;
+import DESAFIO_4_EJP_TELALOGIN.views.MenuRecrutadorView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +15,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class CadastroColaboradorController implements Initializable{
 
@@ -46,6 +49,12 @@ public class CadastroColaboradorController implements Initializable{
 
     @FXML
     void Voltar(ActionEvent event) {
+        MenuRecrutadorView telaanterior = new MenuRecrutadorView();
+        try{
+            telaanterior.start(new Stage());
+            CadastroColaboradorView.getStage().close();
+        }
+        catch(Exception e){}
 
     }
 

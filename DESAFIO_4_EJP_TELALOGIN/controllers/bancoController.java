@@ -320,7 +320,7 @@ public class bancoController {
      * @param cpf
      * METODO QUE REALIZA SAQUE NA CONTA 
      * ainda não solicita a senha para realizar a operação
-     * CHAMADO NA CLASSE MENU OPERACIONAL CONTROLLER
+     * CHAMADO NA CLASSE SAQUE CONTROLLER
      */
     public void sacar(String valorSaque, String cpf){
         Double saldoConta = 0.0;
@@ -332,8 +332,7 @@ public class bancoController {
             while(rsDAO.next()){
                 saldoConta = Double.parseDouble(rsDAO.getString("saldo"));
             }
-            pstm.close();
-            if(saldoConta <= 0.0){
+            if(saldoConta < Double.parseDouble(valorSaque)){
                 JOptionPane.showMessageDialog(null,"Saldo Insuficiente");
             }
             else{
