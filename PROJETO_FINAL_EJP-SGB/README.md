@@ -1,18 +1,34 @@
-## Getting Started
+# Sistema de Gerenciamento Bancário - S. G. B.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Autor: Edclydson Sousa
 
-## Folder Structure
+## Objetivo
 
-The workspace contains two folders by default, where:
+Otimizar os processos bancários de uma agência. 
+- Abrindo Contas
+- Gerindo os Clientes
+- Gerindo as Contas
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Tecnologias e Metodologia Utilizada:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- Metodologia Ágil - KANBAN
+- Java 17
+- MySQL
+- MySQL WorkBench
+- XAMPP
+- WAMP SERVER
+- Notion
+- VsCode
+- NetBeans
 
-## Dependency Management
+# Agradecimentos Especiais
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- <a href="https://github.com/lucssilva"> Lucas Barros </a>
+- <a href="https://github.com/professorlemos"> Leo Lemos </a>
+- <a href="https://www.instagram.com/escolajovensprogramadores/"> Escola de Jovens Programadores - E.J.P. </a>
+- <a href="https://www.instagram.com/prefeituradefortaleza/"> Prefeitura de Fortaleza </a>
+- <a href="https://www.instagram.com/institutojuventudeinovacao/"> Instituto Juventude Inovação - I.J.I. </a>
+- <a href="https://www.instagram.com/jdfortaleza_/"> Juventude Digital </a>
+- <a href="https://www.instagram.com/juventudefortaleza/"> Juventude de Fortaleza </a>
+- <a href=""> Bolsa Jovem </a>
