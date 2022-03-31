@@ -1,0 +1,145 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "views.App",
+            "projectName": "SGB_1b68824e",
+            "vmArgs": "--module-path \"C:/Users/edcly/Documents/Nova pasta/SGB/lib\" --add-modules javafx.swt,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web --add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED --add-opens=javafx.graphics/javafx.scene=ALL-UNNAMED --add-exports=javafx.web/com.sun.webkit.network=ALL-UNNAMED --add-exports=javafx.web/com.sun.webkit.dom=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.scenario.animation.shared=ALL-UNNAMED --add-exports=javafx.graphics/com.sun.javafx.tk.quantum=ALL-UNNAMED "
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "SGB_1b68824e",
+           // "vmArgs": "--module-path \"C:/Users/edcly/Documents/Nova pasta/SGB/lib\" --add-modules javafx.swt,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web"
+           "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuscarColaboradorView",
+            "request": "launch",
+            "mainClass": "views.BuscarColaboradorView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroClienteView",
+            "request": "launch",
+            "mainClass": "views.CadastroClienteView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroColaboradorView",
+            "request": "launch",
+            "mainClass": "views.CadastroColaboradorView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroContaView",
+            "request": "launch",
+            "mainClass": "views.CadastroContaView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch DepositoView",
+            "request": "launch",
+            "mainClass": "views.DepositoView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarClienteView",
+            "request": "launch",
+            "mainClass": "views.GerenciarClienteView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarEncerraView",
+            "request": "launch",
+            "mainClass": "views.GerenciarEncerraView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarSenhaView",
+            "request": "launch",
+            "mainClass": "views.GerenciarSenhaView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch LoginView",
+            "request": "launch",
+            "mainClass": "views.LoginView",
+            "projectName": "SGB_1b68824e",
+            //"vmArgs": "--module-path \"C:/Users/edcly/Documents/Nova pasta/SGB/lib\" --add-modules javafx.swt,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web"
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuGerenteView",
+            "request": "launch",
+            "mainClass": "views.MenuGerenteView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuIniciarAtendimentoOperacionalView",
+            "request": "launch",
+            "mainClass": "views.MenuIniciarAtendimentoOperacionalView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuOperadorView",
+            "request": "launch",
+            "mainClass": "views.MenuOperadorView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuRecrutadorView",
+            "request": "launch",
+            "mainClass": "views.MenuRecrutadorView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch SaqueOutroValorView",
+            "request": "launch",
+            "mainClass": "views.SaqueOutroValorView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch SaqueView",
+            "request": "launch",
+            "mainClass": "views.SaqueView",
+            "projectName": "SGB_1b68824e"
+        },
+        {
+            "type": "java",
+            "name": "Launch TransferenciaView",
+            "request": "launch",
+            "mainClass": "views.TransferenciaView",
+            "projectName": "SGB_1b68824e"
+        }
+    ]
+}
