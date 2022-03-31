@@ -125,12 +125,12 @@ public class CadastroClienteController implements Initializable{
             
             contaNova.setSenha(campoSenha);
             if(campoTipoConta.equals("Conta Poupança")){
-                contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));
+                contaNova.setNumeroDaConta(String.valueOf(rand.nextInt((999999 - 100000)+1)+100000));
                 contaNova.setTipoDaConta("CP");
                 contaNova.setSaldo(0.0);
             }
             else{
-                contaNova.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));
+                contaNova.setNumeroDaConta(String.valueOf(rand.nextInt((99999999 - 10000000)+1)+10000000));
                 contaNova.setTipoDaConta("CC");
                 contaNova.setSaldo(Double.parseDouble(campoSaldoInicial));
             }

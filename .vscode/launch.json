@@ -2,8 +2,171 @@
     // Use o IntelliSense para saber mais sobre os atributos possíveis.
     // Focalizar para exibir as descrições dos atributos existentes.
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "java.project.sourcePaths": ["views"],
+    "java.project.outputPath": ".bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
     "version": "0.2.0",
     "configurations": [
+        {
+            "type": "java",
+            "name": "Launch LoginView",
+            "request": "launch",
+            "mainClass": "LoginView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.lib.Main",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.Main",
+            "projectName": "EJP-Java_2b9614a4"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuscarColaboradorView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.BuscarColaboradorView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroClienteView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.CadastroClienteView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroColaboradorView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.CadastroColaboradorView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch CadastroContaView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.CadastroContaView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch DepositoView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.DepositoView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarClienteView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.GerenciarClienteView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarEncerraView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.GerenciarEncerraView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch GerenciarSenhaView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.GerenciarSenhaView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuGerenteView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.MenuGerenteView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuIniciarAtendimentoOperacionalView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.MenuIniciarAtendimentoOperacionalView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuOperadorView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.MenuOperadorView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch MenuRecrutadorView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.MenuRecrutadorView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch SaqueOutroValorView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.SaqueOutroValorView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch SaqueView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.SaqueView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch TransferenciaView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.TransferenciaView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch LoginView",
+            "request": "launch",
+            "mainClass": "PROJETO_FINAL_EJP.views.LoginView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--enable-preview --module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Launch LoginView",
+            "request": "launch",
+            "mainClass": "DESAFIO_4_EJP_TELALOGIN.views.LoginView",
+            "projectName": "EJP-Java_2b9614a4",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+        },
         {
             "type": "java",
             "name": "Launch SaqueView",
@@ -213,7 +376,7 @@
             "request": "launch",
             "mainClass": "DESAFIO_2_EJP_BANCO.mainCaixaEletronico",
             "projectName": "EJP-Java_2b9614a4",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
+            "vmArgs": "--enable-preview --module-path \"C:/Program Files/Java/javafx-sdk-17.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics"
         },
         {
             "type": "java",

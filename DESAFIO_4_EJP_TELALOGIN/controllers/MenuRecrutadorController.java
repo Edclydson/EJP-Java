@@ -61,62 +61,6 @@ public class MenuRecrutadorController {
         catch(Exception e){e.printStackTrace();}
     }
 
-
-    @FXML
-    void CalcularFGTS(ActionEvent event) {
-        MenuFGTSView telaseguinte = new MenuFGTSView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }
-        catch(Exception e){e.printStackTrace();}
-    }
-
-    @FXML
-    void CalcularFalta(ActionEvent event) {
-        MenuFaltaView telaseguinte = new MenuFaltaView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
-    }
-
-    @FXML
-    void CalcularHoraExtra(ActionEvent event) {
-        MenuHoraExtraView telaseguinte = new MenuHoraExtraView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
-    }
-
-    @FXML
-    void CalcularInsalubridade(ActionEvent event) {
-        MenuInsalubridadeView telaseguinte = new MenuInsalubridadeView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
-    }
-
-    @FXML
-    void CalcularSalarioFamilia(ActionEvent event) {
-        MenuSalarioFamiliaView telaseguinte = new MenuSalarioFamiliaView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
-    }
-
-    @FXML
-    void CalcularVT(ActionEvent event) {
-        MenuValeTransporteView telaseguinte = new MenuValeTransporteView();
-        try{
-            telaseguinte.start(new Stage());
-            MenuRecrutadorView.getStage().close();
-        }catch(Exception e){e.printStackTrace();}
-    }
-
     @FXML
     void SairMenu(ActionEvent event) {
         LoginView telaanterior = new LoginView();

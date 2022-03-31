@@ -101,12 +101,12 @@ public class CadastroContaController implements Initializable {
             Random rand = new Random();
             abrirConta.setSenha(campoSenha);
             if(campoTipoConta.equals("Conta Poupança")){
-                abrirConta.setNumeroDaConta(String.valueOf(rand.nextInt(100000,999999)));
+                abrirConta.setNumeroDaConta(String.valueOf((rand.nextInt(999999 - 100000)+1)+100000));
                 abrirConta.setTipoDaConta("CP");
                 abrirConta.setSaldo(0.0);
             }
             else{
-                abrirConta.setNumeroDaConta(String.valueOf(rand.nextInt(10000000,99999999)));
+                abrirConta.setNumeroDaConta(String.valueOf(rand.nextInt((99999999 - 10000000)+1)+10000000));
                 abrirConta.setTipoDaConta("CC");
                 abrirConta.setSaldo(Double.parseDouble(campoSaldoInicial));
             }

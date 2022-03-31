@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 import javax.swing.JOptionPane;
 
@@ -442,15 +443,15 @@ public class bancoController {
         do{
             if(cargo.equals("RH")){
                 userNovo = "rec"+MatriculaGerada.substring(10, 14);
-                senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                senhaNova = String.valueOf(geraSenha.ints(0000,9999));
             }
             else if(cargo.equals("Gerente")){
                 userNovo = "ger"+MatriculaGerada.substring(10, 14);
-                senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                senhaNova = String.valueOf(geraSenha.ints(0000,9999));
             }
             else{
                 userNovo = "opr"+MatriculaGerada.substring(10, 14);
-                senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                senhaNova = String.valueOf(geraSenha.ints(0000,9999));
             }
             // VERIFICA SE EXISTE ALGUMA CREDENCIAL IGUAL
             try{
@@ -461,15 +462,15 @@ public class bancoController {
                 if(rsDAO.next()){
                     if(cargo.equals("RH")){
                         userNovo = "rec"+MatriculaGerada.substring(0, 4);
-                        senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                        senhaNova = String.valueOf(geraSenha.ints(0000,9999));
                     }
                     else if(cargo.equals("Gerente")){
                         userNovo = "ger"+MatriculaGerada.substring(0, 4);
-                        senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                        senhaNova = String.valueOf(geraSenha.ints(0000,9999));
                     }
                     else{
                         userNovo = "opr"+MatriculaGerada.substring(0, 4);
-                        senhaNova = String.valueOf(geraSenha.nextInt(0000,9999));
+                        senhaNova = String.valueOf(geraSenha.ints(0000,9999));
                     }
                 }
                 else{break;}
@@ -500,8 +501,8 @@ public class bancoController {
         Random geradorMatricula = new Random();
         String novaMatricula;
         do{
-            int part1 = geradorMatricula.nextInt(0000001,9999998);
-            int part2 = geradorMatricula.nextInt(0000001,9999998);
+            IntStream part1 = geradorMatricula.ints(0000001,9999998);
+            IntStream part2 = geradorMatricula.ints(0000001,9999998);
     
              novaMatricula = String.valueOf(part1)+String.valueOf(part2);
             
