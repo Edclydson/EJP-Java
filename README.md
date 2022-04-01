@@ -3,8 +3,8 @@ Escola de Jovens Programadores - JAVA (Dez 2021 - Mar 2022)
 
 ## Modulo 1
 - Introdução a Lógica de Programação
+- Estrutura de Dados
 - Introdução a Linguagem Java
-- Classes, Packages e Projetos
 - Atividades Práticas
 - Desafios
 
@@ -22,6 +22,7 @@ Escola de Jovens Programadores - JAVA (Dez 2021 - Mar 2022)
 - JavaFX
 - Scene Builder
 - Java Swing
+- Banco de Dados
 - Iniciação do Projeto Final
 
 ## Modula 4
