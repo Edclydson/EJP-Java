@@ -1,5 +1,5 @@
 # EJP-Java
-Escola de Jovens Programadores - JAVA (Dez 2021 - Mar 2022)
+Escola de Jovens Programadores - JAVA (Dez 2021 - Mar 2022) 165hrs/a
 
 ## Modulo 1
 - Introdução a Lógica de Programação
