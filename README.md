@@ -25,7 +25,7 @@ Escola de Jovens Programadores - JAVA (Dez 2021 - Mar 2022) 165hrs/a
 - Banco de Dados
 - Iniciação do Projeto Final
 
-## Modula 4
+## Modulo 4
 - Desenvolvimento do Projeto Final
 - Atividades Práticas
 - Conteúdo Extra (Linkedin, Mercado de Trabalho, Organização do Curriculo)
